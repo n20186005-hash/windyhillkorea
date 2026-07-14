@@ -62,7 +62,7 @@ const live = h.liveInfo ?? {};
       if (!weatherEl || !sunsetEl) return;
 
       var url =
-        'https://api.open-meteo.com/v1/forecast?latitude=34.7445&longitude=128.7400&current=temperature_2m,weather_code&daily=sunset&timezone=Asia/Seoul';
+        'https://api.open-meteo.com/v1/forecast?latitude=34.7931&longitude=128.6381&current=temperature_2m,weather_code&daily=sunset&timezone=Asia/Seoul';
 
       function weatherText(code, lang) {
         if (lang === 'ja') {
@@ -159,29 +159,37 @@ const live = h.liveInfo ?? {};
         sunsetEl.textContent = '—';
       }
 
-      setLoading();
-      fetch(url, { cache: 'no-store' })
-        .then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.json();
-        })
-        .then(function (data) {
-          var temp = data && data.current ? data.current.temperature_2m : undefined;
-          var code = data && data.current ? data.current.weather_code : undefined;
-          var sunset = data && data.daily && data.daily.sunset ? data.daily.sunset[0] : undefined;
+      function loadLiveInfo() {
+        setLoading();
+        fetch(url, { cache: 'no-store' })
+          .then(function (res) {
+            if (!res.ok) throw new Error('HTTP ' + res.status);
+            return res.json();
+          })
+          .then(function (data) {
+            var temp = data && data.current ? data.current.temperature_2m : undefined;
+            var code = data && data.current ? data.current.weather_code : undefined;
+            var sunset = data && data.daily && data.daily.sunset ? data.daily.sunset[0] : undefined;
 
-          if (typeof temp === 'number' && typeof code === 'number') {
-            var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-            var shortLang = lang.indexOf('zh') === 0 ? 'zh' : lang.slice(0, 2);
-            weatherEl.textContent = weatherText(code, shortLang) + ' ' + Math.round(temp) + '°C';
-          } else {
-            weatherEl.textContent = '—';
-          }
-          sunsetEl.textContent = formatSunsetHHMM(sunset);
-        })
-        .catch(function () {
-          setFallback();
-        });
+            if (typeof temp === 'number' && typeof code === 'number') {
+              var lang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+              var shortLang = lang.indexOf('zh') === 0 ? 'zh' : lang.slice(0, 2);
+              weatherEl.textContent = weatherText(code, shortLang) + ' ' + Math.round(temp) + '°C';
+            } else {
+              weatherEl.textContent = '—';
+            }
+            sunsetEl.textContent = formatSunsetHHMM(sunset);
+          })
+          .catch(function () {
+            setFallback();
+          });
+      }
+
+      if ('requestIdleCallback' in window) {
+        window.requestIdleCallback(loadLiveInfo, { timeout: 1200 });
+      } else {
+        window.setTimeout(loadLiveInfo, 300);
+      }
     })();
   </script>
 </section>

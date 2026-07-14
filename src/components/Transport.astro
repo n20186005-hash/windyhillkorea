@@ -30,33 +30,38 @@ const section = messages.transportSection;
       </div>
     </div>
 
-    <!-- Mode cards -->
-    <div class="grid md:grid-cols-2 gap-6">
+    <!-- Mode accordions -->
+    <div class="transport-mode-list">
       {section.modes.map((mode, index) => (
-        <article class="rounded-2xl p-6 border h-full" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
-          <div class="flex items-center gap-4 mb-4">
-            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-semibold" style="background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);">
-              {mode.icon ?? String(index + 1).padStart(2, '0')}
-            </div>
-            <div>
-              <p class="text-xs uppercase tracking-[0.18em]" style="color: var(--text-muted);">{mode.label}</p>
-              <h3 class="font-semibold text-xl" style="color: var(--text-primary);">{mode.title}</h3>
-            </div>
-          </div>
-          <p class="text-base leading-relaxed mb-4" style="color: var(--text-secondary);">{mode.description}</p>
-          <ul class="space-y-3 text-sm" style="color: var(--text-secondary);">
-            {mode.details.map((detail) => (
-              <li class="flex gap-3"><span style="color: var(--accent);">-</span><span>{detail}</span></li>
-            ))}
-          </ul>
-          {mode.steps && mode.steps.length > 0 && (
-            <ol class="mt-4 space-y-2 text-sm" style="color: var(--text-secondary); counter-reset: step;">
-              {mode.steps.map((step) => (
-                <li class="flex gap-3"><span class="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-semibold" style="background: var(--accent); color: #fff;">{step.n}</span><span>{step.t}</span></li>
+        <details class="transport-mode" open={index === 0}>
+          <summary class="transport-mode-summary">
+            <span class="flex items-center gap-4 min-w-0">
+              <span class="w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-semibold shrink-0" style="background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent);">
+                {mode.icon ?? String(index + 1).padStart(2, '0')}
+              </span>
+              <span class="min-w-0">
+                <span class="block text-xs uppercase tracking-[0.18em]" style="color: var(--text-muted);">{mode.label}</span>
+                <span class="block font-semibold text-lg sm:text-xl leading-snug mt-1" style="color: var(--text-primary);">{mode.title}</span>
+              </span>
+            </span>
+            <span class="transport-mode-chevron shrink-0 text-xl" style="color: var(--accent);" aria-hidden="true">⌄</span>
+          </summary>
+          <div class="transport-mode-body">
+            <p class="text-sm sm:text-base leading-relaxed mb-4" style="color: var(--text-secondary);">{mode.description}</p>
+            <ul class="space-y-3 text-sm" style="color: var(--text-secondary);">
+              {mode.details.map((detail) => (
+                <li class="flex gap-3"><span style="color: var(--accent);">-</span><span>{detail}</span></li>
               ))}
-            </ol>
-          )}
-        </article>
+            </ul>
+            {mode.steps && mode.steps.length > 0 && (
+              <ol class="mt-4 space-y-2 text-sm" style="color: var(--text-secondary); counter-reset: step;">
+                {mode.steps.map((step) => (
+                  <li class="flex gap-3"><span class="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-semibold" style="background: var(--accent); color: #fff;">{step.n}</span><span>{step.t}</span></li>
+                ))}
+              </ol>
+            )}
+          </div>
+        </details>
       ))}
     </div>
 
@@ -95,10 +100,13 @@ const section = messages.transportSection;
         <h3 class="font-semibold text-xl mb-4" style="color: var(--text-primary);">{section.driverFaqTitle}</h3>
         <div class="space-y-4">
           {section.driverFaq.map((qa) => (
-            <div>
-              <p class="font-medium mb-1" style="color: var(--text-primary);">{qa.q}</p>
-              <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{qa.a}</p>
-            </div>
+            <details class="rounded-xl border overflow-hidden" style="border-color: var(--border-color); background: var(--card-bg);">
+              <summary class="flex items-start justify-between gap-4 cursor-pointer list-none p-4 font-medium" style="color: var(--text-primary);">
+                <span>{qa.q}</span>
+                <span class="shrink-0 text-xl" style="color: var(--accent);" aria-hidden="true">⌄</span>
+              </summary>
+              <p class="px-4 pb-4 text-sm leading-relaxed" style="color: var(--text-secondary);">{qa.a}</p>
+            </details>
           ))}
         </div>
       </div>

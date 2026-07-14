@@ -18,14 +18,28 @@ const htmlLang = htmlLangAttr(lang);
 const alts = buildAlternates(path);
 const canonical = alts[lang] ?? alts.zh;
 const { messages } = getI18n(Astro.url);
-
-const jsonLd = {
-  '@context': 'https://schema.org',
+const imageUrl = 'https://windyhillkorea.com/gallery/windy-hill-1.jpg';
+const placeId = `${canonical}#place`;
+const attractionId = `${canonical}#attraction`;
+const pageId = `${canonical}#webpage`;
+const imageId = `${canonical}#primaryimage`;
+const authorityId = 'https://www.knps.or.kr/#organization';
+const officialReferences = {
+  knps: 'https://english.knps.or.kr/Knp/Hallyeohaesang/Intro/Introduction.aspx?MenuNum=1&Submenu=Npp',
+  geoje: 'https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008902001000000',
+  maps: 'https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8',
+};
+const touristAttractionLd = {
   '@type': 'TouristAttraction',
+  '@id': attractionId,
   name: messages.meta.title,
+  alternateName: ['Windy Hill', '바람의 언덕', '风之丘'],
   description: messages.meta.description,
   url: canonical,
-  image: 'https://windyhillkorea.com/gallery/windy-hill-1.jpg',
+  isAccessibleForFree: true,
+  publicAccess: true,
+  image: { '@id': imageId },
+  mainEntityOfPage: { '@id': pageId },
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Galgot-ri 14-47, Nambu-myeon',
@@ -36,9 +50,27 @@ const jsonLd = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 34.7445,
-    longitude: 128.7400,
+    latitude: 34.7931,
+    longitude: 128.6381,
   },
+  containedInPlace: { '@id': placeId },
+  touristType: ['Independent travellers', 'Family visitors', 'Landscape photographers'],
+  keywords: [
+    'Windy Hill',
+    '바람의 언덕',
+    '风之丘',
+    'Geoje',
+    'Hallyeohaesang National Park',
+    'Marine terrace',
+    'Coastal meadow',
+  ],
+  additionalProperty: [
+    { '@type': 'PropertyValue', name: 'Coordinates', value: '34.7931, 128.6381' },
+    { '@type': 'PropertyValue', name: 'Conservation status', value: 'Hallyeohaesang National Park, District 4' },
+    { '@type': 'PropertyValue', name: 'Landform', value: 'Marine terrace / Coastal meadow' },
+    { '@type': 'PropertyValue', name: 'Dominant vegetation', value: 'Imperata cylindrica coastal grassland' },
+    { '@type': 'PropertyValue', name: 'Managing authority', value: 'Korea National Park Service and Geoje City' },
+  ],
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -47,27 +79,83 @@ const jsonLd = {
       closes: '23:59',
     },
   ],
-  isAccessibleForFree: true,
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.2',
     reviewCount: '11454',
   },
-  sameAs: ['https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8'],
+  sameAs: [officialReferences.maps, officialReferences.knps, officialReferences.geoje],
 };
-  const breadcrumbLd = (() => {
-    const bc = messages.breadcrumb;
-    return {
-      '@context': 'https://schema.org',
-      '@type': 'BreadcrumbList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: bc.home, item: `https://windyhillkorea.com/${lang}` },
-        { '@type': 'ListItem', position: 2, name: bc.geoje, item: `https://windyhillkorea.com/${lang}#overview` },
-        { '@type': 'ListItem', position: 3, name: bc.nambu, item: `https://windyhillkorea.com/${lang}#transport` },
-        { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
+const breadcrumbLd = (() => {
+  const bc = messages.breadcrumb;
+  return {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: bc.home, item: `https://windyhillkorea.com/${lang}` },
+      { '@type': 'ListItem', position: 2, name: bc.geoje, item: `https://windyhillkorea.com/${lang}#overview` },
+      { '@type': 'ListItem', position: 3, name: bc.nambu, item: `https://windyhillkorea.com/${lang}#transport` },
+      { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
+    ],
+  };
+})();
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': pageId,
+      url: canonical,
+      name: title,
+      description,
+      inLanguage: htmlLang,
+      primaryImageOfPage: { '@id': imageId },
+      about: { '@id': attractionId },
+      isPartOf: {
+        '@type': 'WebSite',
+        '@id': 'https://windyhillkorea.com/#website',
+        url: 'https://windyhillkorea.com/',
+        name: 'Windy Hill Korea',
+      },
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': imageId,
+      contentUrl: imageUrl,
+      url: imageUrl,
+      caption: 'Windy Hill windmill and coastal meadow in Geoje',
+    },
+    {
+      '@type': 'Place',
+      '@id': placeId,
+      name: 'Windy Hill coastal hill, Geoje',
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 34.7931,
+        longitude: 128.6381,
+      },
+      containedInPlace: {
+        '@type': 'AdministrativeArea',
+        name: 'Hallyeohaesang National Park, District 4',
+      },
+    },
+    {
+      '@type': 'Organization',
+      '@id': authorityId,
+      name: 'Korea National Park Service',
+      sameAs: officialReferences.knps,
+      url: 'https://www.knps.or.kr/',
+    },
+    {
+      ...touristAttractionLd,
+      provider: { '@id': authorityId },
+      subjectOf: [
+        { '@type': 'CreativeWork', url: officialReferences.knps, name: 'KNPS reference' },
+        { '@type': 'CreativeWork', url: officialReferences.geoje, name: 'Geoje tourism reference' },
       ],
-    };
-  })();
+    },
+    breadcrumbLd,
+  ],
+};
 ---
 
 <!doctype html>
@@ -77,6 +165,7 @@ const jsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <link rel="preload" as="image" href="/gallery/windy-hill-1.jpg" />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang="zh" href={alts.zh} />
     <link rel="alternate" hreflang="en" href={alts.en} />
@@ -91,11 +180,7 @@ const jsonLd = {
     <meta property="og:locale" content={ogLocale[lang] ?? lang} />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXX" />
-    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
-
     <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
 
     <script is:inline>
       (function () {

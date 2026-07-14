@@ -1,8 +1,78 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const intro = messages.intro;
 const om = messages.officialManagement;
+const scienceCopy = {
+  zh: {
+    title: '地质与植被解读',
+    subtitle: '让“风之丘”为何看起来如此开阔，不再只是审美描述，而是可以被解释的海岸科学。',
+    cards: [
+      {
+        label: '植被学 / Vegetation',
+        title: '“띠밭늘”与白茅 Imperata cylindrica',
+        text: '风之丘旧称“띠밭늘”，其中“띠”在植物学上可对应白茅 `Imperata cylindrica` 一类的耐盐、耐风草本。终年强劲的盐渍海风抑制了高大木本植物的生长，使低矮草甸得以保留，也形成了今天少见的临海无木丘陵景观。',
+      },
+      {
+        label: '地貌学 / Geology',
+        title: '里亚斯海岸 Rias Coast 的海岸剖面',
+        text: '风之丘面向海金刚与多岛海，属于闲丽海上国立公园的里亚斯式海岸体系。其轮廓可理解为全新世冰后海面上升后，海水淹没沿海山谷所形成的溺谷型海岸，因此近岸岛屿、曲折海湾与开阔观景面会在这里同时出现。',
+      },
+    ],
+  },
+  en: {
+    title: 'Reading the Geology & Vegetation',
+    subtitle: 'Why Windy Hill feels so open is not only aesthetic language, but coastal science visible on the ground.',
+    cards: [
+      {
+        label: 'Vegetation',
+        title: 'Ttibatneul and Imperata cylindrica',
+        text: 'Windy Hill was once known as `띠밭늘`, and the word `띠` can be read botanically alongside white cogongrass, `Imperata cylindrica`, a salt-tolerant and wind-resistant grass. Year-round saline sea winds suppress taller woody growth, allowing the low meadow to persist and creating the rare treeless coastal hill seen today.',
+      },
+      {
+        label: 'Geology',
+        title: 'A Rias Coast profile in Hallyeohaesang',
+        text: 'Facing Haegeumgang and the island-dotted sea, Windy Hill belongs to the Rias Coast system of Hallyeohaesang National Park. In broad terms, this is a drowned-valley coastline formed when post-glacial Holocene sea-level rise flooded coastal valleys, which explains the intricate coves, offshore islets and wide marine outlook visible from the hill.',
+      },
+    ],
+  },
+  ja: {
+    title: '地形と植生の読み解き',
+    subtitle: 'バラムの丘がなぜこれほど開けて見えるのかを、景観表現だけでなく海岸科学として説明します。',
+    cards: [
+      {
+        label: '植生学',
+        title: '「띠밭늘」と白茅 Imperata cylindrica',
+        text: 'バラムの丘の旧称「띠밭늘」にある `띠` は、植物学的には白茅 `Imperata cylindrica` のような耐塩性・耐風性の高い草本と結びつけて読めます。年間を通じた強い塩性海風が高木の成長を抑えるため、低い草地が残り、今日のような海辺の無樹木丘陵が維持されています。',
+      },
+      {
+        label: '地形学',
+        title: 'リアス海岸 Rias Coast の地形断面',
+        text: '海金剛と多島海に向かうバラムの丘は、閑麗海上国立公園のリアス式海岸に属します。これは全新世の氷期後海面上昇によって沿岸の谷が水没してできた溺れ谷海岸であり、そのため複雑な入江、沖の小島、開放的な展望が同時に現れます。',
+      },
+    ],
+  },
+  ko: {
+    title: '지형·식생 해설',
+    subtitle: '바람의 언덕이 왜 이렇게 탁 트여 보이는지, 감상 표현이 아니라 해안 과학의 언어로 읽어냅니다.',
+    cards: [
+      {
+        label: '식생학',
+        title: '‘띠밭늘’과 백모 Imperata cylindrica',
+        text: '바람의 언덕의 옛 이름 ‘띠밭늘’의 `띠` 는 식물학적으로 백모 `Imperata cylindrica` 같은 내염성·내풍성이 강한 초본과 연결해 읽을 수 있습니다. 사계절 이어지는 강한 염분 해풍이 키 큰 목본의 성장을 억제해 낮은 초지가 남고, 오늘날의 드문 해안 무목 구릉 경관이 형성됩니다.',
+      },
+      {
+        label: '지형학',
+        title: '리아스 해안 Rias Coast 의 단면',
+        text: '해금강과 다도해를 마주한 바람의 언덕은 한려해상국립공원의 리아스식 해안 체계에 속합니다. 이는 홀로세 빙기 이후 해수면 상승으로 연안 산곡이 잠기며 형성된 익곡 해안으로 이해할 수 있으며, 그 결과 굴곡진 만입, 가까운 섬들, 넓은 해상 조망이 함께 나타납니다.',
+      },
+    ],
+  },
+}[lang] ?? {
+  title: 'Reading the Geology & Vegetation',
+  subtitle: 'Why Windy Hill feels so open is not only aesthetic language, but coastal science visible on the ground.',
+  cards: [],
+};
 ---
 
 <section id="about" class="section-padding" style="background: var(--bg-secondary);">
@@ -15,6 +85,20 @@ const om = messages.officialManagement;
         <div class="rounded-2xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
           <h3 class="font-semibold mb-3" style="color: var(--text-primary);">{om.title}</h3>
           <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{om.text}</p>
+        </div>
+
+        <div class="mt-6 rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+          <h3 class="font-semibold text-xl mb-2" style="color: var(--text-primary);">{scienceCopy.title}</h3>
+          <p class="text-sm leading-relaxed mb-5" style="color: var(--text-secondary);">{scienceCopy.subtitle}</p>
+          <div class="space-y-4">
+            {scienceCopy.cards.map((card) => (
+              <article class="rounded-2xl p-5 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+                <p class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{card.label}</p>
+                <h4 class="font-semibold text-lg mb-2" style="color: var(--text-primary);">{card.title}</h4>
+                <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{card.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -18,7 +18,7 @@ const photoAlts = g.photoAlts ?? images.map(() => g.photoAlt);
     <div class="gallery-grid" id="gallery-grid">
       {images.map((src, index) => (
         <button type="button" class="gallery-item" data-index={index} aria-label={photoAlts[index] ?? g.photoAlt}>
-          <img src={src} alt={photoAlts[index] ?? g.photoAlt} loading="lazy" />
+          <img src={src} alt={photoAlts[index] ?? g.photoAlt} loading="lazy" decoding="async" />
         </button>
       ))}
     </div>

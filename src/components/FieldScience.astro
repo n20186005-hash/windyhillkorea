@@ -1,0 +1,515 @@
+---
+import { getI18n } from '../i18n/ui';
+
+const { lang } = getI18n(Astro.url);
+const field = {
+  zh: {
+    title: '现场科学卡片',
+    subtitle: '把当天的光线窗口与无痕山林原则合并成一组轻量工具，既方便规划拍摄，也保持这片海岸的教育属性。',
+    lightEyebrow: 'Field Light',
+    lightTitle: '今日海岸光线窗口',
+    lightText: '基于当前坐标自动计算日落与黄金时段，用于判断何时适合观景、拍摄与回程。',
+    coordLabel: '坐标',
+    goldenLabel: '黄金时段起始',
+    sunsetLabel: '今日日落',
+    loading: '计算中...',
+    lightReady: '黄金时段通常按日落前约 60 分钟估算；晴朗傍晚的最后 20 分钟，风车、草甸与海面最容易进入均衡的金色斜光。',
+    lightFallback: '未获取到当日数据，建议以官方天气与现场天光变化为准。',
+    marineEyebrow: 'Coastal Surface',
+    marineTitle: '潮位 / 海况提示',
+    marineText: '读取近岸风速与浪高，给出极轻量的临海观察提示；若计划乘船、近岸摄影或判断潮位，请再核对官方潮汐表与港口公告。',
+    windLabel: '近岸风速',
+    waveLabel: '浪高',
+    seaLabel: '海况判断',
+    marineLoading: '海况读取中...',
+    marineFallback: '未获取到近岸海况数据，潮位与乘船安排请以港口、海事或船社公告为准。',
+    marineReady: '该提示仅作现场参考，不替代官方潮汐表；遇大风、海雾或船班调整，请优先遵循现场管理信息。',
+    seaCalm: '平静',
+    seaModerate: '轻浪',
+    seaRough: '风浪偏强',
+    riskLabel: '乘船风险提示',
+    riskShore: '适合岸上观景',
+    riskConfirm: '需再次确认船班',
+    riskCaution: '风浪偏强谨慎靠岸',
+    lntEyebrow: 'Leave No Trace',
+    lntTitle: '无痕山林 · 微承诺',
+    lntText: '先读三条最关键的现场原则，再完成一次轻量承诺。这不会上传任何资料，只会在本设备保存你的阅读状态。',
+    progressTemplate: '已勾选 {count} / {total} 条原则',
+    commitIdle: '完成承诺',
+    commitDone: '已完成承诺',
+    statusIdle: '阅读并勾选全部原则后，可完成本地承诺。',
+    statusDone: '感谢你以更低干扰的方式接近这片海岸。',
+    principles: [
+      { id: 'deck', label: '沿木栈道与既有步道行走' },
+      { id: 'trash', label: '把垃圾带离草坡与岸边' },
+      { id: 'quiet', label: '控制噪音，不翻越护栏取景' },
+    ],
+  },
+  en: {
+    title: 'Field Science Notes',
+    subtitle: 'A light toolkit that combines today’s light window with Leave No Trace practice, helping plan a visit without losing the page’s scientific tone.',
+    lightEyebrow: 'Field Light',
+    lightTitle: 'Today’s Coastal Light Window',
+    lightText: 'Uses the current coordinates to estimate sunset and a practical golden-hour start for viewing, photography and return timing.',
+    coordLabel: 'Coordinates',
+    goldenLabel: 'Golden hour starts',
+    sunsetLabel: 'Today’s sunset',
+    loading: 'Calculating...',
+    lightReady: 'Golden hour is estimated here as roughly 60 minutes before sunset; on clear evenings, the last 20 minutes often bring the most balanced warm side-light across the windmill, meadow and sea.',
+    lightFallback: 'Daily light data could not be loaded. Follow official weather services and actual sky conditions on site.',
+    marineEyebrow: 'Coastal Surface',
+    marineTitle: 'Tide / Sea-State Note',
+    marineText: 'Reads nearshore wind and wave height for a very light coastal reference. If you plan a cruise, shoreline photography or tide timing, still verify the official tide table and port notices.',
+    windLabel: 'Nearshore wind',
+    waveLabel: 'Wave height',
+    seaLabel: 'Sea state',
+    marineLoading: 'Loading sea-state...',
+    marineFallback: 'Nearshore marine data could not be loaded. Verify tide timing and departures with port, maritime or cruise notices.',
+    marineReady: 'This panel is an on-site reference only and does not replace an official tide table. In strong wind, sea fog or schedule changes, follow local notices first.',
+    seaCalm: 'Calm',
+    seaModerate: 'Slight',
+    seaRough: 'Windy / rough',
+    riskLabel: 'Cruise risk note',
+    riskShore: 'Best for shore viewing',
+    riskConfirm: 'Reconfirm departures',
+    riskCaution: 'Strong wind/waves, use caution',
+    lntEyebrow: 'Leave No Trace',
+    lntTitle: 'Leave No Trace Micro-Pledge',
+    lntText: 'Read the three key field principles and complete a lightweight pledge. Nothing is uploaded; the state is stored only on this device.',
+    progressTemplate: '{count} / {total} principles checked',
+    commitIdle: 'Complete pledge',
+    commitDone: 'Pledge saved',
+    statusIdle: 'Check all principles to complete the local pledge.',
+    statusDone: 'Thank you for approaching this coast with lower impact.',
+    principles: [
+      { id: 'deck', label: 'Stay on the deck and established paths' },
+      { id: 'trash', label: 'Carry all waste away from the meadow' },
+      { id: 'quiet', label: 'Keep noise low and do not cross barriers' },
+    ],
+  },
+  ja: {
+    title: 'フィールド科学カード',
+    subtitle: '当日の光線情報と Leave No Trace の実践を一つにまとめ、見学計画と保全意識を同時に支える軽量ツールです。',
+    lightEyebrow: 'Field Light',
+    lightTitle: '今日の海岸光線ウィンドウ',
+    lightText: '現在の座標をもとに、日没時刻と実用的なゴールデンアワー開始時刻を計算します。',
+    coordLabel: '座標',
+    goldenLabel: 'ゴールデンアワー開始',
+    sunsetLabel: '今日の日没',
+    loading: '計算中...',
+    lightReady: 'ここではゴールデンアワーを日没約 60 分前として推定しています。晴天の夕方は、最後の 20 分ほどで風車・草地・海面に最も安定した暖色の斜光が入ります。',
+    lightFallback: '当日の光線データを取得できませんでした。公式天気情報と現地の空の状態を優先してください。',
+    marineEyebrow: 'Coastal Surface',
+    marineTitle: '潮位 / 海況のヒント',
+    marineText: '近岸の風速と波高を読み取り、ごく軽い海辺の判断材料を示します。乗船、海辺での撮影、潮位確認には公式潮汐表と港の案内を必ず併用してください。',
+    windLabel: '沿岸風速',
+    waveLabel: '波高',
+    seaLabel: '海況',
+    marineLoading: '海況を取得中...',
+    marineFallback: '近岸の海況データを取得できませんでした。潮位と船便は港・海事・船会社の案内を優先してください。',
+    marineReady: 'この表示は現地の参考用であり、公式潮汐表の代替ではありません。強風・海霧・ダイヤ変更時は現地案内を優先してください。',
+    seaCalm: '穏やか',
+    seaModerate: 'やや波あり',
+    seaRough: '風波強め',
+    riskLabel: '乗船リスクの目安',
+    riskShore: '岸上見学向き',
+    riskConfirm: '船便の再確認を',
+    riskCaution: '風波強く接岸に注意',
+    lntEyebrow: 'Leave No Trace',
+    lntTitle: '無痕の丘陵・ミクロ誓約',
+    lntText: '現地で重要な三つの原則を読み、軽い誓約を完了します。情報は送信されず、この端末にだけ保存されます。',
+    progressTemplate: '{total} 項目中 {count} 項目を確認',
+    commitIdle: '誓約を完了',
+    commitDone: '誓約を保存済み',
+    statusIdle: 'すべての原則を確認するとローカル誓約を完了できます。',
+    statusDone: 'この海岸により低い負荷で向き合ってくれてありがとうございます。',
+    principles: [
+      { id: 'deck', label: '木道と既存の歩道から外れない' },
+      { id: 'trash', label: 'ごみを草地や海辺に残さない' },
+      { id: 'quiet', label: '騒音を抑え、柵を越えて撮影しない' },
+    ],
+  },
+  ko: {
+    title: '현장 과학 카드',
+    subtitle: '당일 광선 정보와 Leave No Trace 실천을 한 묶음의 경량 도구로 정리해, 관람 계획과 보전 의식을 함께 돕습니다.',
+    lightEyebrow: 'Field Light',
+    lightTitle: '오늘의 해안 광선 창',
+    lightText: '현재 좌표를 바탕으로 일몰 시각과 실용적인 골든아워 시작 시점을 계산합니다.',
+    coordLabel: '좌표',
+    goldenLabel: '골든아워 시작',
+    sunsetLabel: '오늘 일몰',
+    loading: '계산 중...',
+    lightReady: '여기서는 골든아워를 일몰 약 60분 전으로 추정합니다. 맑은 저녁에는 마지막 20분가량이 풍차, 초지, 해면에 가장 균형 잡힌 따뜻한 사광이 들어오는 구간입니다.',
+    lightFallback: '당일 광선 데이터를 불러오지 못했습니다. 공식 기상 정보와 현장 하늘 상태를 우선하세요.',
+    marineEyebrow: 'Coastal Surface',
+    marineTitle: '조위 / 해상 상태 안내',
+    marineText: '연안 풍속과 파고를 읽어 아주 가벼운 해안 참고값을 제공합니다. 승선, 해안 촬영, 조위 판단이 필요하면 공식 조석표와 항만 공지를 함께 확인하세요.',
+    windLabel: '연안 풍속',
+    waveLabel: '파고',
+    seaLabel: '해상 상태',
+    marineLoading: '해상 상태 불러오는 중...',
+    marineFallback: '연안 해상 데이터를 불러오지 못했습니다. 조위와 승선 일정은 항만·해사·선사 공지를 우선하세요.',
+    marineReady: '이 카드는 현장 참고용일 뿐 공식 조석표를 대체하지 않습니다. 강풍, 해무, 선편 조정 시에는 현장 안내를 우선하세요.',
+    seaCalm: '잔잔함',
+    seaModerate: '약한 물결',
+    seaRough: '바람·파도 강함',
+    riskLabel: '승선 위험 안내',
+    riskShore: '해안 관람에 적합',
+    riskConfirm: '선편 재확인 권장',
+    riskCaution: '바람·파도 강해 접안 주의',
+    lntEyebrow: 'Leave No Trace',
+    lntTitle: '무흔 탐방 · 마이크로 서약',
+    lntText: '현장에서 가장 중요한 세 가지 원칙을 읽고 가벼운 서약을 완료하세요. 정보는 업로드되지 않고 이 기기에만 저장됩니다.',
+    progressTemplate: '원칙 {total}개 중 {count}개 확인',
+    commitIdle: '서약 완료',
+    commitDone: '서약 저장됨',
+    statusIdle: '모든 원칙을 확인하면 로컬 서약을 완료할 수 있습니다.',
+    statusDone: '이 해안을 더 낮은 간섭으로 대하려는 선택에 감사합니다.',
+    principles: [
+      { id: 'deck', label: '데크길과 기존 탐방로만 이용하기' },
+      { id: 'trash', label: '쓰레기를 초지와 해안에 남기지 않기' },
+      { id: 'quiet', label: '소음을 줄이고 난간을 넘지 않기' },
+    ],
+  },
+}[lang] ?? {
+  title: 'Field Science Notes',
+  subtitle: 'A light toolkit that combines today’s light window with Leave No Trace practice.',
+  principles: [],
+};
+---
+
+<section
+  id="field-notes"
+  class="section-padding"
+  style="background: var(--bg-secondary);"
+  data-loading={field.loading}
+  data-light-ready={field.lightReady}
+  data-light-fallback={field.lightFallback}
+  data-progress-template={field.progressTemplate}
+  data-commit-idle={field.commitIdle}
+  data-commit-done={field.commitDone}
+  data-status-idle={field.statusIdle}
+  data-status-done={field.statusDone}
+  data-marine-loading={field.marineLoading}
+  data-marine-ready={field.marineReady}
+  data-marine-fallback={field.marineFallback}
+  data-sea-calm={field.seaCalm}
+  data-sea-moderate={field.seaModerate}
+  data-sea-rough={field.seaRough}
+  data-risk-shore={field.riskShore}
+  data-risk-confirm={field.riskConfirm}
+  data-risk-caution={field.riskCaution}
+>
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center mb-10">
+      <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-3" style="color: var(--text-primary);">{field.title}</h2>
+      <p class="text-base sm:text-lg leading-relaxed" style="color: var(--text-secondary);">{field.subtitle}</p>
+    </div>
+
+    <div class="grid xl:grid-cols-3 gap-6 items-start">
+      <article class="rounded-3xl p-6 md:p-8 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <p class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{field.lightEyebrow}</p>
+        <h3 class="font-semibold text-2xl mb-3" style="color: var(--text-primary);">{field.lightTitle}</h3>
+        <p class="text-base leading-relaxed mb-6" style="color: var(--text-secondary);">{field.lightText}</p>
+
+        <div class="grid sm:grid-cols-3 gap-3">
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.coordLabel}</p>
+            <p class="text-base font-semibold" style="color: var(--text-primary);">34.7931° N, 128.6381° E</p>
+          </div>
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.goldenLabel}</p>
+            <p id="golden-hour-start" class="text-base font-semibold" style="color: var(--text-primary);">--:--</p>
+          </div>
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.sunsetLabel}</p>
+            <p id="field-sunset-time" class="text-base font-semibold" style="color: var(--text-primary);">--:--</p>
+          </div>
+        </div>
+
+        <p id="field-light-note" class="mt-5 text-sm leading-relaxed" style="color: var(--text-secondary);">{field.loading}</p>
+      </article>
+
+      <article class="rounded-3xl p-6 md:p-8 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+        <p class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{field.marineEyebrow}</p>
+        <h3 class="font-semibold text-2xl mb-3" style="color: var(--text-primary);">{field.marineTitle}</h3>
+        <p class="text-base leading-relaxed mb-6" style="color: var(--text-secondary);">{field.marineText}</p>
+
+        <div class="grid sm:grid-cols-3 xl:grid-cols-1 gap-3">
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.windLabel}</p>
+            <p id="field-wind-speed" class="text-base font-semibold" style="color: var(--text-primary);">-- km/h</p>
+          </div>
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.waveLabel}</p>
+            <p id="field-wave-height" class="text-base font-semibold" style="color: var(--text-primary);">-- m</p>
+          </div>
+          <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+            <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.seaLabel}</p>
+            <p id="field-sea-state" class="text-base font-semibold" style="color: var(--text-primary);">--</p>
+          </div>
+        </div>
+
+        <div class="mt-4 rounded-2xl p-4 border" style="background: color-mix(in srgb, var(--accent) 8%, transparent); border-color: color-mix(in srgb, var(--accent) 22%, transparent);">
+          <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.riskLabel}</p>
+          <p id="field-boat-risk" class="text-base font-semibold" style="color: var(--text-primary);">--</p>
+        </div>
+
+        <p id="field-marine-note" class="mt-5 text-sm leading-relaxed" style="color: var(--text-secondary);">{field.marineLoading}</p>
+      </article>
+
+      <article class="rounded-3xl p-6 md:p-8 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+        <p class="text-xs uppercase tracking-[0.18em] mb-2" style="color: var(--text-muted);">{field.lntEyebrow}</p>
+        <h3 class="font-semibold text-2xl mb-3" style="color: var(--text-primary);">{field.lntTitle}</h3>
+        <p class="text-base leading-relaxed mb-5" style="color: var(--text-secondary);">{field.lntText}</p>
+
+        <div class="science-meter" aria-hidden="true">
+          <span id="science-meter-fill" class="science-meter-fill"></span>
+        </div>
+        <p id="science-progress" class="mt-3 text-sm" style="color: var(--text-secondary);"></p>
+
+        <div class="mt-5 flex flex-wrap gap-3">
+          {field.principles.map((item) => (
+            <button type="button" class="science-chip" data-chip={item.id} aria-pressed="false">
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+          <button type="button" id="science-commit" class="science-pledge-button" disabled>
+            {field.commitIdle}
+          </button>
+          <p id="science-status" class="text-sm leading-relaxed" style="color: var(--text-secondary);">{field.statusIdle}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    var section = document.getElementById('field-notes');
+    if (!section) return;
+
+    var sunsetEl = document.getElementById('field-sunset-time');
+    var goldenEl = document.getElementById('golden-hour-start');
+    var noteEl = document.getElementById('field-light-note');
+    var windEl = document.getElementById('field-wind-speed');
+    var waveEl = document.getElementById('field-wave-height');
+    var seaEl = document.getElementById('field-sea-state');
+    var riskEl = document.getElementById('field-boat-risk');
+    var marineNoteEl = document.getElementById('field-marine-note');
+    var progressEl = document.getElementById('science-progress');
+    var statusEl = document.getElementById('science-status');
+    var meterFill = document.getElementById('science-meter-fill');
+    var commitBtn = document.getElementById('science-commit');
+    var chips = Array.from(section.querySelectorAll('[data-chip]'));
+    var storageKey = 'windyhill-lnt-v1';
+    var state = { selected: [], committed: false };
+
+    function formatTime(isoLike) {
+      if (!isoLike || typeof isoLike !== 'string') return '--:--';
+      var tIndex = isoLike.indexOf('T');
+      if (tIndex === -1) return '--:--';
+      return isoLike.slice(tIndex + 1, tIndex + 6) || '--:--';
+    }
+
+    function subtractMinutes(isoLike, minutes) {
+      if (!isoLike) return '--:--';
+      var date = new Date(isoLike);
+      if (Number.isNaN(date.getTime())) return '--:--';
+      date.setMinutes(date.getMinutes() - minutes);
+      var hours = String(date.getHours()).padStart(2, '0');
+      var mins = String(date.getMinutes()).padStart(2, '0');
+      return hours + ':' + mins;
+    }
+
+    function seaStateLabel(waveHeight) {
+      if (typeof waveHeight !== 'number') return '--';
+      if (waveHeight <= 0.3) return section.getAttribute('data-sea-calm') || '';
+      if (waveHeight <= 0.8) return section.getAttribute('data-sea-moderate') || '';
+      return section.getAttribute('data-sea-rough') || '';
+    }
+
+    function boatRiskLabel(windSpeed, waveHeight) {
+      if (typeof windSpeed !== 'number' && typeof waveHeight !== 'number') return '--';
+      if ((typeof waveHeight === 'number' && waveHeight > 0.8) || (typeof windSpeed === 'number' && windSpeed > 28)) {
+        return section.getAttribute('data-risk-caution') || '';
+      }
+      if ((typeof waveHeight === 'number' && waveHeight > 0.3) || (typeof windSpeed === 'number' && windSpeed > 16)) {
+        return section.getAttribute('data-risk-confirm') || '';
+      }
+      return section.getAttribute('data-risk-shore') || '';
+    }
+
+    function progressText(count, total) {
+      var tpl = section.getAttribute('data-progress-template') || '{count}/{total}';
+      return tpl.replace('{count}', String(count)).replace('{total}', String(total));
+    }
+
+    function setChipState(chip, active) {
+      chip.classList.toggle('is-active', active);
+      chip.setAttribute('aria-pressed', active ? 'true' : 'false');
+    }
+
+    function renderPledge() {
+      var total = chips.length;
+      var count = state.selected.length;
+      chips.forEach(function (chip) {
+        setChipState(chip, state.selected.indexOf(chip.getAttribute('data-chip')) !== -1);
+      });
+      if (progressEl) progressEl.textContent = progressText(count, total);
+      if (meterFill) meterFill.style.width = total ? String((count / total) * 100) + '%' : '0%';
+      if (commitBtn) {
+        commitBtn.disabled = count !== total;
+        commitBtn.textContent = state.committed
+          ? (section.getAttribute('data-commit-done') || '')
+          : (section.getAttribute('data-commit-idle') || '');
+        commitBtn.classList.toggle('is-complete', state.committed);
+      }
+      if (statusEl) {
+        statusEl.textContent = state.committed
+          ? (section.getAttribute('data-status-done') || '')
+          : (section.getAttribute('data-status-idle') || '');
+      }
+    }
+
+    function persist() {
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function restore() {
+      try {
+        var raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+        var parsed = JSON.parse(raw);
+        if (parsed && Array.isArray(parsed.selected)) {
+          state.selected = parsed.selected;
+          state.committed = !!parsed.committed;
+        }
+      } catch (e) {}
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var id = chip.getAttribute('data-chip');
+        if (!id) return;
+        if (state.selected.indexOf(id) !== -1) {
+          state.selected = state.selected.filter(function (item) { return item !== id; });
+          state.committed = false;
+        } else {
+          state.selected = state.selected.concat(id);
+        }
+        renderPledge();
+        persist();
+      });
+    });
+
+    if (commitBtn) {
+      commitBtn.addEventListener('click', function () {
+        if (state.selected.length !== chips.length) return;
+        state.committed = true;
+        renderPledge();
+        persist();
+      });
+    }
+
+    restore();
+    renderPledge();
+
+    if (noteEl) noteEl.textContent = section.getAttribute('data-loading') || '';
+    if (marineNoteEl) marineNoteEl.textContent = section.getAttribute('data-marine-loading') || '';
+
+    Promise.all([
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=34.7931&longitude=128.6381&daily=sunset&current=wind_speed_10m&timezone=Asia/Seoul', { cache: 'no-store' }),
+      fetch('https://marine-api.open-meteo.com/v1/marine?latitude=34.7931&longitude=128.6381&current=wave_height&timezone=Asia/Seoul', { cache: 'no-store' }),
+    ])
+      .then(function (responses) {
+        return Promise.all(responses.map(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        }));
+      })
+      .then(function (payload) {
+        var weatherData = payload[0] || {};
+        var marineData = payload[1] || {};
+        var sunset = weatherData && weatherData.daily && weatherData.daily.sunset ? weatherData.daily.sunset[0] : '';
+        var wind = weatherData && weatherData.current ? weatherData.current.wind_speed_10m : undefined;
+        var wave = marineData && marineData.current ? marineData.current.wave_height : undefined;
+
+        if (sunsetEl) sunsetEl.textContent = formatTime(sunset);
+        if (goldenEl) goldenEl.textContent = subtractMinutes(sunset, 60);
+        if (noteEl) noteEl.textContent = section.getAttribute('data-light-ready') || '';
+        if (windEl) windEl.textContent = typeof wind === 'number' ? Math.round(wind) + ' km/h' : '-- km/h';
+        if (waveEl) waveEl.textContent = typeof wave === 'number' ? wave.toFixed(1) + ' m' : '-- m';
+        if (seaEl) seaEl.textContent = seaStateLabel(wave);
+        if (riskEl) riskEl.textContent = boatRiskLabel(wind, wave);
+        if (marineNoteEl) marineNoteEl.textContent = section.getAttribute('data-marine-ready') || '';
+      })
+      .catch(function () {
+        if (noteEl) noteEl.textContent = section.getAttribute('data-light-fallback') || '';
+        if (riskEl) riskEl.textContent = '--';
+        if (marineNoteEl) marineNoteEl.textContent = section.getAttribute('data-marine-fallback') || '';
+      });
+  })();
+</script>
+
+<style>
+  .science-meter {
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 999px;
+    overflow: hidden;
+    background: color-mix(in srgb, var(--accent) 10%, var(--bg-secondary));
+  }
+  .science-meter-fill {
+    display: block;
+    height: 100%;
+    width: 0%;
+    border-radius: inherit;
+    background: var(--accent);
+    transition: width 0.2s ease;
+  }
+  .science-chip {
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    text-align: left;
+    color: var(--text-primary);
+    background: var(--card-bg);
+    transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .science-chip:hover {
+    transform: translateY(-1px);
+  }
+  .science-chip.is-active {
+    color: #fff;
+    border-color: transparent;
+    background: var(--accent);
+  }
+  .science-pledge-button {
+    border: none;
+    border-radius: 999px;
+    padding: 0.9rem 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    background: var(--accent);
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.15s ease, background 0.2s ease;
+  }
+  .science-pledge-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+  }
+  .science-pledge-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+  .science-pledge-button.is-complete {
+    background: var(--color-nature-600);
+  }
+</style>

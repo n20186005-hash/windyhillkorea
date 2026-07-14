@@ -1,8 +1,119 @@
 ---
 import { getI18n } from '../i18n/ui';
-const { messages } = getI18n(Astro.url);
+const { lang, messages } = getI18n(Astro.url);
 const q = messages.quickFactsDashboard;
 const items = q.items ?? [];
+const metadataCopy = {
+  zh: {
+    title: '核心地理与保护数据',
+    subtitle: '将坐标、保护级别、地貌与管理机构前置，帮助移动端用户更快判断景点属性与权威来源。',
+    rows: [
+      {
+        label: '地理坐标',
+        value: '34.7931° N, 128.6381° E',
+      },
+      {
+        label: '保护级别',
+        value: '闲丽海上国立公园第 4 区（Hallyeohaesang National Park, District 4）',
+      },
+      {
+        label: '地貌类型',
+        value: '海蚀平台 / 临海丘陵草甸（Marine Terrace / Coastal Meadow）',
+      },
+      {
+        label: '官方管理机构',
+        value: '韩国国立公园公团（KNPS）与巨济市政府',
+      },
+    ],
+    links: [
+      { label: 'KNPS 官方说明', href: 'https://english.knps.or.kr/Knp/Hallyeohaesang/Intro/Introduction.aspx?MenuNum=1&Submenu=Npp' },
+      { label: '巨济观光信息', href: 'https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008902001000000' },
+    ],
+  },
+  en: {
+    title: 'Core Geographic & Conservation Data',
+    subtitle: 'Surface the coordinates, protection tier, landform and managing authority up front so mobile readers can classify the site at a glance.',
+    rows: [
+      {
+        label: 'Coordinates',
+        value: '34.7931° N, 128.6381° E',
+      },
+      {
+        label: 'Conservation status',
+        value: 'Hallyeohaesang National Park, District 4',
+      },
+      {
+        label: 'Landform',
+        value: 'Marine terrace / coastal meadow',
+      },
+      {
+        label: 'Authority',
+        value: 'Korea National Park Service (KNPS) and Geoje City',
+      },
+    ],
+    links: [
+      { label: 'KNPS reference', href: 'https://english.knps.or.kr/Knp/Hallyeohaesang/Intro/Introduction.aspx?MenuNum=1&Submenu=Npp' },
+      { label: 'Geoje tourism info', href: 'https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008902001000000' },
+    ],
+  },
+  ja: {
+    title: '地理・保護の基礎データ',
+    subtitle: '座標、保護区分、地形、管理主体を先頭に置き、モバイルでも景観の性格をすばやく把握できるようにします。',
+    rows: [
+      {
+        label: '座標',
+        value: '34.7931° N, 128.6381° E',
+      },
+      {
+        label: '保護区分',
+        value: '閑麗海上国立公園 第4区域（Hallyeohaesang National Park, District 4）',
+      },
+      {
+        label: '地形',
+        value: '海食台 / 海岸丘陵草地（Marine Terrace / Coastal Meadow）',
+      },
+      {
+        label: '管理主体',
+        value: '韓国国立公園公団（KNPS）と巨済市',
+      },
+    ],
+    links: [
+      { label: 'KNPS 公式', href: 'https://english.knps.or.kr/Knp/Hallyeohaesang/Intro/Introduction.aspx?MenuNum=1&Submenu=Npp' },
+      { label: '巨済観光情報', href: 'https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008902001000000' },
+    ],
+  },
+  ko: {
+    title: '핵심 지리·보전 데이터',
+    subtitle: '좌표, 보호 등급, 지형, 관리 주체를 앞에 배치해 모바일에서도 장소의 성격을 빠르게 파악할 수 있게 했습니다.',
+    rows: [
+      {
+        label: '좌표',
+        value: '34.7931° N, 128.6381° E',
+      },
+      {
+        label: '보호 등급',
+        value: '한려해상국립공원 제4구역 (Hallyeohaesang National Park, District 4)',
+      },
+      {
+        label: '지형 유형',
+        value: '해식대 / 해안 구릉 초지 (Marine Terrace / Coastal Meadow)',
+      },
+      {
+        label: '관리 기관',
+        value: '국립공원공단(KNPS)과 거제시',
+      },
+    ],
+    links: [
+      { label: 'KNPS 안내', href: 'https://english.knps.or.kr/Knp/Hallyeohaesang/Intro/Introduction.aspx?MenuNum=1&Submenu=Npp' },
+      { label: '거제 관광 정보', href: 'https://tour.geoje.go.kr/index.geoje?menuCd=DOM_000008902001000000' },
+    ],
+  },
+}[lang] ?? {
+  title: 'Core Geographic & Conservation Data',
+  subtitle: 'Surface the coordinates, protection tier, landform and managing authority up front so mobile readers can classify the site at a glance.',
+  rows: [],
+  links: [],
+};
 ---
 
 <section id="quick-facts" class="section-padding" style="background: var(--bg-secondary);">
@@ -25,6 +136,36 @@ const items = q.items ?? [];
           {it.note && <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">{it.note}</p>}
         </div>
       ))}
+    </div>
+
+    <div class="mt-8 rounded-2xl p-5 md:p-8 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+      <div class="max-w-3xl mb-6">
+        <h3 class="font-semibold text-xl md:text-2xl mb-2" style="color: var(--text-primary);">{metadataCopy.title}</h3>
+        <p class="text-sm md:text-base leading-relaxed" style="color: var(--text-secondary);">{metadataCopy.subtitle}</p>
+      </div>
+
+      <div class="facts-meta-grid">
+        {metadataCopy.rows.map((row) => (
+          <div class="facts-meta-card">
+            <p class="facts-meta-term">{row.label}</p>
+            <p class="facts-meta-value">{row.value}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        {metadataCopy.links.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold border"
+            style="border-color: var(--border-color); color: var(--text-primary); background: var(--card-bg);"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 </section>
