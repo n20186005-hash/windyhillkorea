@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/optimize-images.mjs && astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
