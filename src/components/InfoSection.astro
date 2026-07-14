@@ -1,0 +1,62 @@
+---
+import { getI18n } from '../i18n/ui';
+const { messages } = getI18n(Astro.url);
+const k = messages.knowledge;
+const timeline = k.timeline ?? [];
+const engineering = k.engineering ?? [];
+const dyk = k.didYouKnow;
+---
+
+<section id="history" class="section-padding" style="background: var(--bg-primary);">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="font-display text-3xl sm:text-4xl font-semibold mb-6 text-center" style="color: var(--text-primary);">{k.title}</h2>
+    <div class="w-12 h-0.5 mb-12 mx-auto" style="background: var(--accent);"></div>
+
+    <div class="grid lg:grid-cols-2 gap-10 items-start">
+      <div>
+        <h3 class="font-display text-2xl font-semibold mb-5" style="color: var(--text-primary);">{k.timelineTitle}</h3>
+        <ol class="space-y-4">
+          {timeline.map((t) => (
+            <li class="rounded-2xl p-6 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
+              <div class="flex items-start justify-between gap-4 mb-3">
+                <p class="text-xs uppercase tracking-[0.18em]" style="color: var(--text-muted);">{t.time}</p>
+                {t.tag && <span class="text-xs px-2 py-1 rounded-full border" style="border-color: var(--border-color); color: var(--text-secondary); background: var(--card-bg);">{t.tag}</span>}
+              </div>
+              <h4 class="font-semibold text-lg mb-2" style="color: var(--text-primary);">{t.title}</h4>
+              <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{t.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div>
+        <h3 class="font-display text-2xl font-semibold mb-5" style="color: var(--text-primary);">{k.engineeringTitle}</h3>
+        <div class="space-y-4">
+          {engineering.map((e) => (
+            <div class="rounded-2xl p-6 border" style="background: var(--card-bg); border-color: var(--border-color); box-shadow: var(--card-shadow);">
+              <h4 class="font-semibold text-lg mb-2" style="color: var(--accent);">{e.title}</h4>
+              <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{e.text}</p>
+              {e.points && (
+                <ul class="mt-4 space-y-3 text-sm" style="color: var(--text-secondary);">
+                  {e.points.map((p) => (
+                    <li class="flex gap-3"><span style="color: var(--accent);">•</span><span>{p}</span></li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {dyk && (
+      <div class="mt-12 rounded-2xl p-7 border flex gap-4 items-start" style="background: color-mix(in srgb, var(--accent) 10%, transparent); border-color: color-mix(in srgb, var(--accent) 30%, transparent);">
+        <span class="text-2xl" aria-hidden="true">💡</span>
+        <div>
+          <h3 class="font-semibold text-lg mb-2" style="color: var(--accent);">{dyk.title}</h3>
+          <p class="text-base leading-relaxed" style="color: var(--text-secondary);">{dyk.text}</p>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

@@ -1,0 +1,804 @@
+{
+  "meta": {
+    "title": "Windy Hill (바람의 언덕) | Nambu-myeon, Geoje-si, Gyeongsangnam-do, Korea",
+    "description": "The complete guide to Windy Hill (바람의 언덕): a seaside hill at the northern shore of Dojangpo Village, southern Geoje Island, Korea, famed for its 11-metre Dutch windmill, 450-metre wooden deck and uninterrupted views of the Haegeumgang archipelago. History, how to get there, visitor reviews and the best photo spots."
+  },
+  "header": {
+    "siteName": "Windy Hill (바람의 언덕)",
+    "home": "Home",
+    "visit": "Visit",
+    "transport": "Getting Here",
+    "history": "About",
+    "gallery": "Gallery",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "map": "Map",
+    "backToHome": "Back to Home"
+  },
+  "common": {
+    "changeLanguage": "Switch language",
+    "toggleTheme": "Toggle theme"
+  },
+  "nonprofitBanner": {
+    "text": "This is a non-profit, independent guide compiled by enthusiastic travellers, aiming to give you the most objective advice for visiting Windy Hill — free of charge and affiliated with no organisation."
+  },
+  "mission": {
+    "title": "Our Mission",
+    "text": "So that every visitor to Geoje Island leaves without regret, we have gathered these scattered official details — only to give you the purest cultural and visiting experience."
+  },
+  "breadcrumb": {
+    "home": "Home",
+    "geoje": "Geoje-si",
+    "nambu": "Nambu-myeon",
+    "current": "Windy Hill"
+  },
+  "stickyNav": {
+    "facts": "Quick Facts",
+    "etiquette": "Responsible Visit",
+    "route": "Half-day Route",
+    "transport": "Getting Here",
+    "visit": "Visit Tips",
+    "faq": "FAQ"
+  },
+  "hero": {
+    "title": "Windy Hill (바람의 언덕)",
+    "subtitle": "A seaside hill at the northern shore of Dojangpo Village, southern Geoje Island: an 11-metre Dutch windmill stands on the grassy slope, paired with a 450-metre wooden deck and unobstructed sea-and-sky views — one of the best vantage points over the Haegeumgang (해금강) archipelago.",
+    "rating": "4.2 (11,454)",
+    "reviewCount": "11,454 reviews",
+    "hours": "Open 24 hours",
+    "openMaps": "View on Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8",
+    "tags": ["Must-see Korean coastal viewpoint", "Hallyeo Maritime National Park", "Landmark of southern Geoje"],
+    "routeCta": {
+      "label": "Plan Your Route",
+      "href": "#transport"
+    },
+    "historyCta": {
+      "label": "Its History",
+      "href": "#history"
+    },
+    "quickFacts": [
+      { "icon": "🆓", "label": "Admission", "value": "Free" },
+      { "icon": "🕐", "label": "Hours", "value": "24 hours" },
+      { "icon": "🌬️", "label": "Icon", "value": "11 m Dutch windmill" }
+    ],
+    "navCta": { "label": "📍 Get Directions", "href": "#transport" },
+    "photoCta": { "label": "📸 Best Photo Spots", "href": "#gallery" },
+    "liveInfo": { "weather": "Current weather", "sunset": "Today's sunset" }
+  },
+  "quickFactsDashboard": {
+    "title": "Quick Facts Dashboard",
+    "subtitle": "Put the hard numbers up front to reduce repetition and make planning faster.",
+    "items": [
+      { "icon": "📍", "label": "Location / Location", "value": "Geoje-si, Gyeongsangnam-do", "note": "A coastal hill in Galgot-ri, Nambu-myeon, at the northern shore of Dojangpo Village, facing the entrance to Haegeumgang." },
+      { "icon": "🆓", "label": "Admission / Admission", "value": "Free", "note": "A natural viewpoint open year-round, 24 hours a day — no ticket needed." },
+      { "icon": "🌬️", "label": "Icon / Icon", "value": "11 m Dutch windmill", "note": "A Dutch-style windmill completed in 2009 with a 450 m deck, the visual heart of Windy Hill." },
+      { "icon": "⭐", "label": "Rating / Rating", "value": "4.2 / 5", "note": "Based on about 11,454 Google Maps visitor reviews." }
+    ]
+  },
+  "hiddenRules": {
+    "title": "Helpful Tips Before You Visit",
+    "subtitle": "Windy Hill is an always-open, ungated natural viewpoint. A few pointers below will make your trip smoother.",
+    "highlights": [
+      { "icon": "🆓", "label": "Admission & hours", "value": "Free · 24h", "note": "No ticket office and no closing time — visit any time." },
+      { "icon": "🌬️", "label": "Wind & temperature", "value": "Strong sea breeze", "note": "The hill faces the sea; winds are much stronger than inland — bring a windproof jacket." },
+      { "icon": "📷", "label": "Photo timing", "value": "Dawn & dusk best", "note": "Sea fog and backlight hurt photos; clear mornings and just before sunset have the softest light." }
+    ],
+    "panels": [
+      {
+        "q": "What is the difference between outside viewing and inside visiting?",
+        "a": "Windy Hill is a fully open grassy hill with no walls or gates; you can enjoy the windmill and sea view for free anytime from the deck and lawn. There are no separate paid pavilions nearby.",
+        "items": ["Free and open all day, no reservation.", "The windmill is an outdoor landmark — close-up photos welcome."]
+      },
+      {
+        "q": "Safety & gear: what should I prepare?",
+        "a": "The deck and lawn are mostly natural terrain; the seaside is windy and boardwalks or grass can be slippery when wet.",
+        "items": ["Wear non-slip flat shoes; avoid high heels.", "Watch children and pets near the cliff edge.", "Secure cameras and hats in strong wind."]
+      },
+      {
+        "q": "Why does it sometimes feel like 'there's nothing here'?",
+        "a": "Windy Hill's charm is the open sea-and-sky and the windmill silhouette, not dense buildings. On rainy or foggy days the seascape fades — factor weather and timing into your plan."
+      }
+    ]
+  },
+  "complianceGuide": {
+    "title": "Responsible Tourism & Conservation Guide",
+    "subtitle": "Windy Hill and its surrounding waters belong to the Hallyeo Maritime National Park, a protected ecological and scenic area. Following these rules is basic respect for this coast.",
+    "rules": [
+      {
+        "badge": "🚮",
+        "title": "Take your trash with you",
+        "text": "Public bins on the hill and shore are limited — carry your waste out to protect the ocean and meadow ecosystem.",
+        "items": ["Bring a small bag and dispose at Dojangpo Village bins.", "Never throw anything into the sea or off the cliffs."]
+      },
+      {
+        "badge": "🌱",
+        "title": "Do not trample the meadow",
+        "text": "The low grasses and wildflowers shaped by the sea wind are a unique landscape — stay on the deck and established paths.",
+        "items": ["The wooden deck (데크길) is the planned route — follow it.", "Do not climb fences or cliffs for photos."]
+      },
+      {
+        "badge": "🤫",
+        "title": "Keep quiet & respect neighbours",
+        "text": "Dojangpo Village still has residents and guesthouses — no loud noise, late lingering or horn honking.",
+        "items": ["Lower your voice for photos and calls.", "Check local rules before flying a drone."]
+      },
+      {
+        "badge": "🔥",
+        "title": "No open flames or camping",
+        "text": "Dry grass slopes are flammable; open fires, barbecues and overnight camping are prohibited on the hill.",
+        "items": ["Eat at restaurants and cafés in Dojangpo Village.", "Move to designated campsites for picnics and tents."]
+      }
+    ]
+  },
+  "higashiyamaRoute": {
+    "title": "Geoje South-Line Half-Day Tour · Windy Hill Route",
+    "subtitle": "Windy Hill works best as one stop on Geoje's southern route. Place it mid-way and link it with Haegeumgang and Oedo for the fullest experience.",
+    "steps": [
+      { "title": "[Start] Northern Geoje / Gohyeon Terminal → Nambu-myeon", "meta": "Transit · ~40–60 min", "text": "From Gohyeon (고현) in northern Geoje, drive south along the south coast road toward Dojangpo Village in Nambu-myeon.", "tips": ["Self-drive or local bus; services are limited, allow time."] },
+      { "title": "[Stop 1] Dojangpo Village & Windy Hill", "meta": "Viewpoint · ~60–90 min", "text": "Park at the Dojangpo public lot, walk the 450 m deck up the hill, and frame the windmill with the sea.", "tips": ["Mornings and sunset light are best."] },
+      { "title": "[Stop 2] Haegeumgang cruise (선상 크루즈)", "meta": "Boat · ~60–90 min", "text": "From Dojangpo Pier, cruise to Haegeumgang (해금강) and Oedo to enjoy the rias coast and rock formations.", "tips": ["Sailings depend on weather — confirm beforehand."] },
+      { "title": "[Stop 3] Seonjadae (신선대) Observatory", "meta": "Viewpoint · ~30 min", "text": "Back on land, head to the Seonjadae lookout for a panorama of Haegeumgang and the islands.", "tips": ["Pairs well with Windy Hill in one day."] },
+      { "title": "[Stop 4] Oedo Botania (외도 보타니아)", "meta": "Garden · ~60 min", "text": "Take a shuttle boat to Oedo and stroll its Mediterranean-style terraced gardens — great for slow walks and photos.", "tips": ["Separate admission; check opening hours ahead."] },
+      { "title": "[Finish] Hakdong Mongdol Beach or return to Gohyeon", "meta": "Rest · ~30–60 min", "text": "In summer, step onto Hakdong Mongdol Beach; otherwise return to Gohyeon for food and lodging.", "tips": ["Do Windy Hill in the morning, then sail in the afternoon."] }
+    ],
+    "disclaimer": "Timings are a reference. Sailings, weather and peak-season crowds can change the pace significantly — adjust on site and follow official notices."
+  },
+  "intro": {
+    "title": "Discover Windy Hill (바람의 언덕)",
+    "description": "Windy Hill sits on a coastal hill at the northern shore of Dojangpo Village, Nambu-myeon, Geoje-si, Gyeongsangnam-do, right at the entrance to Haegeumgang (해금강). An 11-metre Dutch windmill on the grassy slope, with a 450-metre deck and unobstructed sea-and-sky views, makes it one of Geoje Island's most recognisable coastal landmarks. Most visitors pair it with the Haegeumgang cruise and Oedo Botania on the same southern route.",
+    "visitGuide": {
+      "title": "Visitor Guide",
+      "eyebrow": "Practical Planning",
+      "description": "Windy Hill is an always-open, free, ungated natural viewpoint. From Dojangpo Village public parking it is a few minutes' walk up the hill; follow the deck to the windmill and look out over Haegeumgang and the multi-island sea. Plan it together with the nearby boat tours.",
+      "items": [
+        "Free and open 24 hours — no ticket office, no closing time.",
+        "Best shots are from the lawn in front of the windmill and the deck corners; clear mornings and just before sunset have the softest light and fewest people.",
+        "The hill faces the sea and is windy — bring a windproof jacket and non-slip shoes; watch children and pets on wet grass.",
+        "Dojangpo Village has restaurants, cafés and public toilets — convenient supplies; in peak season (spring/summer, weekends) afternoon parking is tight, so arrive early."
+      ]
+    },
+    "alsoKnownAs": {
+      "title": "Highlights",
+      "items": [
+        "11 m Dutch windmill and 450 m sea-view deck — the iconic image of southern Geoje",
+        "Faces the entrance to Haegeumgang (해금강) with vast rias-coast and multi-island views",
+        "Born from a plain grass slope 'Ttibatneul'; named in 2002 and windmilled in 2009; a filming spot for Korean dramas and variety shows",
+        "Free and open all day — great for sea views, walks, sunsets and pre-wedding / portrait photography"
+      ]
+    }
+  },
+  "transportSection": {
+    "title": "Driver & Guide · How to Reach Windy Hill (바람의 언덕)",
+    "subtitle": "Whether you arrive by plane, train, public transit, car, taxi, bicycle or on foot, each mode is detailed below, with parking and a driver FAQ.",
+    "overviewTitle": "After arriving on Geoje Island",
+    "overviewText": "Windy Hill is on the coastal hill at the northern shore of Dojangpo Village, Nambu-myeon, southern Geoje — the core attraction of Geoje's south line. The main gateway is Busan: Gimhae International Airport (PUS) and Busan Station are the usual transit points, then cross to Geoje via the Geoje Bridge (거제대교) or the Busan–Geoje Undersea Tunnel (부산~거제 해저터널), and head south along the south coast road to Dojangpo.",
+    "overviewText2": "Windy Hill has no gate and is free. The easiest approach is to reach the Dojangpo public parking lot, then walk the deck up the hill. Plan transport, parking and walking together to avoid on-site confusion and congestion.",
+    "arrivalTitle": "Remember before you go",
+    "arrivalItems": [
+      "Windy Hill is on the hill north of Dojangpo Village; from the lower public lot the 450 m deck leads to the windmill in about 3–5 minutes.",
+      "The hill has no dedicated parking — use the Dojangpo public lot (free), then walk.",
+      "Southern Geoje roads are mostly two-lane and congest easily in peak season and weekend afternoons — public transit or an early arrival is strongly recommended."
+    ],
+    "modes": [
+      {
+        "label": "By Air (Gimhae / Busan)",
+        "icon": "✈️",
+        "title": "Fly to Gimhae International Airport (PUS)",
+        "description": "Best for overseas and long-distance domestic travellers; Gimhae is the closest international airport to Geoje.",
+        "details": [
+          "Gimhae International Airport (PUS) is about 30 minutes from central Busan — the most convenient airport for Geoje.",
+          "From the airport, take a limousine bus or taxi to Sasang (사상) bus terminal, then transfer to the intercity bus to Geoje (고현).",
+          "Or take a taxi / rental car directly from the airport or Busan across the Busan–Geoje Tunnel to Dojangpo (~1.5–2 hours)."
+        ],
+        "steps": [
+          { "n": "1", "t": "Book a flight to Gimhae International Airport (PUS)." },
+          { "n": "2", "t": "At the airport, head to the Sasang/Busan Station bus or car-rental point." },
+          { "n": "3", "t": "Take the intercity bus or self-drive via the Geoje Bridge/Tunnel south to the Dojangpo public lot." }
+        ]
+      },
+      {
+        "label": "Train / KTX",
+        "icon": "🚆",
+        "title": "KTX to Busan Station",
+        "description": "The easiest rail option from Seoul and beyond; Busan Station is the southeastern rail hub.",
+        "details": [
+          "From Seoul (Seoul Station) KTX to Busan Station takes about 2 h 30 min; also direct from Daejeon, Daegu, etc.",
+          "Inside Busan Station you can connect to the metro and intercity buses; go to Sasang (사상) terminal for the bus to Geoje (고현).",
+          "With a T-money / domestic transit card, metro and bus can be used directly."
+        ],
+        "steps": [
+          { "n": "1", "t": "Take the KTX to Busan Station, follow signs to metro or Sasang bus terminal." },
+          { "n": "2", "t": "By metro or taxi to Sasang (사상) intercity bus terminal." },
+          { "n": "3", "t": "Intercity bus to Gohyeon, then local bus/taxi to Dojangpo." }
+        ]
+      },
+      {
+        "label": "Public Transit (Intercity / Express)",
+        "icon": "🚇",
+        "title": "Intercity Bus + Geoje Local Bus",
+        "description": "The smoothest public-transit combination from Seoul, Busan and Tongyeong.",
+        "details": [
+          "Intercity/express buses from Seoul/Busan/Tongyeong (통영) go directly to the Gohyeon (고현)综合 terminal; from Busan about 1 hour.",
+          "At Gohyeon, transfer to a Geoje local bus (toward Nambu-myeon/Dojangpo) to a stop near Windy Hill, then walk up.",
+          "Local buses are limited — check the day's schedule on a map app and allow waiting time."
+        ],
+        "steps": [
+          { "n": "1", "t": "Take the intercity bus to Gohyeon (고현)综合 terminal." },
+          { "n": "2", "t": "Transfer to a local bus toward Nambu-myeon/Dojangpo." },
+          { "n": "3", "t": "Alight at Dojangpo and walk the deck to the windmill." }
+        ]
+      },
+      {
+        "label": "By Car (Parking)",
+        "icon": "🅿️",
+        "title": "Via Geoje Bridge / Undersea Tunnel",
+        "description": "Good when carrying luggage, travelling with children/elderly, or touring the island; no dedicated hill lot, use nearby facilities.",
+        "details": [
+          "Set navigation to '바람의 언덕 (Windy Hill)' or '도장포 공영주차장 (Dojangpo public parking)', address: 60 Dojangpo 1-gil, Nambu-myeon, Geoje-si, Gyeongsangnam-do.",
+          "From Busan, cross via the Geoje Bridge or Busan–Geoje Undersea Tunnel, then head south along the south coast road (National Route 14, etc.) to Nambu-myeon Dojangpo.",
+          "Dojangpo public parking is free and close to the deck entrance; fills up in peak season, so arrive early."
+        ],
+        "steps": [
+          { "n": "1", "t": "Set navigation to 'Dojangpo public parking' or 'Windy Hill'." },
+          { "n": "2", "t": "Cross the Geoje Bridge/Tunnel south, then the south coast road to Nambu-myeon." },
+          { "n": "3", "t": "Park, then walk the deck about 3–5 minutes up the hill." }
+        ]
+      },
+      {
+        "label": "Taxi / Rideshare",
+        "icon": "🚕",
+        "title": "Door-to-door",
+        "description": "Easiest with lots of luggage, children/elderly, or a late arrival.",
+        "details": [
+          "Taxi from Gohyeon terminal to Dojangpo about 30–40 min, roughly ₩30,000–40,000.",
+          "Direct from Gimhae Airport is farther — about 1.5–2 hours and more expensive; budget accordingly.",
+          "Use a local app like Kakao T; book ahead in remote areas."
+        ]
+      },
+      {
+        "label": "Cycling / Walking",
+        "icon": "🚲",
+        "title": "Geoje Olle & Coastal Ride",
+        "description": "The most relaxed way to feel the island — best on clear days.",
+        "details": [
+          "Geoje has coastal trails like Geoje Olle (거제 올레); ride or walk south along the sea road to Nambu-myeon.",
+          "From Dojangpo Pier it is only about 3–5 minutes' walk to the deck entrance, on a gentle slope.",
+          "Windy and high UV by the sea — wear a helmet, bring water; some roads lack bike lanes, ride safely."
+        ]
+      },
+      {
+        "label": "On Foot (Village Stroll)",
+        "icon": "🚶",
+        "title": "Walk from Dojangpo Village",
+        "description": "If you are already in Dojangpo Village, walking is the most natural approach.",
+        "details": [
+          "From Dojangpo Pier toward Windy Hill is about 5–10 minutes to the deck entrance.",
+          "The village has restaurants, cafés and convenience stores — resupply before climbing.",
+          "The grass and deck have some ups and downs; wear comfortable shoes and watch children and belongings."
+        ]
+      }
+    ],
+    "parking": {
+      "title": "Parking Overview (for drivers)",
+      "note": "Windy Hill has no dedicated parking. Below are the nearest options; rates and availability vary by season and time — please check on-site signage.",
+      "colOption": "Option",
+      "colDistance": "Distance",
+      "colPrice": "Price",
+      "options": [
+        { "name": "Dojangpo public parking (도장포 공영주차장)", "distance": "Hill foot ~200–400 m", "price": "Free" },
+        { "name": "Dojangpo Village roadside lots", "distance": "~300–600 m", "price": "Free / limited" },
+        { "name": "Haegeumgang cruise pier parking", "distance": "~500 m", "price": "By ticket/time" },
+        { "name": "Gohyeon (고현) city parking", "distance": "~30 km", "price": "Mall & roadside, varies" },
+        { "name": "Drop-off (deck entrance)", "distance": "~100 m", "price": "Short stop only, no space" }
+      ],
+      "disclaimer": "Southern Geoje roads are mostly two-lane and narrow — no long roadside parking. EV chargers are mostly in Gohyeon (고현) city and some service areas; none at the hill itself. Rates and restrictions may change — check posted notices."
+    },
+    "driverFaqTitle": "Driver FAQ",
+    "driverFaq": [
+      { "q": "Is there parking near Windy Hill?", "a": "The hill has no dedicated lot, but the Dojangpo public parking (도장포 공영주차장) below is free and a 3–5 minute walk to the deck entrance. It fills fast in peak season and weekends — arrive early or prefer public transit." },
+      { "q": "What is the nearest parking option?", "a": "Dojangpo public parking is closest (about 200–400 m) to the deck entrance, free with relatively ample spaces; the village also has a few limited roadside spots." },
+      { "q": "Is there roadside parking nearby?", "a": "Almost none. Southern roads are two-lane; long roadside parking near the hill is prohibited — use proper lots and public transit." },
+      { "q": "Is driving to Windy Hill advisable?", "a": "Unless you must park, driving is not recommended. South-line roads clog easily between 10:00 and 16:00; walking or transit is smoother. If driving, park at Dojangpo public lot then walk up." },
+      { "q": "Do you recommend public transit?", "a": "Strongly. First take an intercity bus from Busan/Tongyeong to Gohyeon, then a local bus or taxi to Dojangpo. Address: 14-47 Galgot-ri, Nambu-myeon, Geoje-si, Gyeongsangnam-do (Dojangpo Village)." },
+      { "q": "What is the best route to get here?", "a": "Public transit is best: intercity bus to Gohyeon, then local bus/taxi to Dojangpo, then walk; or self-drive via the Geoje Bridge/Tunnel to Dojangpo public parking then walk up. Address: 14-47 Galgot-ri, Nambu-myeon, Geoje-si, Gyeongsangnam-do." }
+    ],
+    "localTipsTitle": "Practical Tips",
+    "localTips": [
+      "Early morning (before 9) and just before sunset have the fewest people — ideal for photos and a quiet moment with the sea breeze.",
+      "The windmill and sea are most photogenic in the blue hour on clear days, framing beautifully with Haegeumgang's rock islets.",
+      "String Windy Hill with the Haegeumgang cruise and Oedo Botania into one Geoje south-line route — a relaxed half-day to a full day."
+    ],
+    "mapsCta": "View Map & Route",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8",
+    "bestTime": {
+      "title": "Best Time to Arrive",
+      "text": "Although the windmill and sea can be enjoyed from the deck any time, mornings are best — you avoid crowds for clean front-on shots, can take the Haegeumgang cruise in the afternoon, and finish with the golden Windy Hill at sunset. That is the lowest-cost, most complete way to experience it."
+    }
+  },
+  "officialManagement": {
+    "title": "About Windy Hill",
+    "text": "The Geoje coastline and outlying islands where Windy Hill stands belong to the celebrated Hallyeo Maritime National Park (한려해상국립공원), managed jointly by the Korea National Park Service (국립공원공단) and related local governments. As a publicly accessible natural viewpoint, it offers citizens and visitors a place to enjoy the multi-island seascape of the Korea Strait and learn about coastal ecology and Geoje's local culture. Daily cleaning, deck maintenance and safety notices are handled by Geoje City and the local community."
+  },
+  "knowledge": {
+    "title": "The History & Symbolism of Windy Hill",
+    "timelineTitle": "Timeline: Key Milestones",
+    "engineeringTitle": "Inside: The Name, The Windmill & The Coast",
+    "timeline": [
+      {
+        "time": "Former-name era",
+        "tag": "Origins",
+        "title": "The 'Ttibatneul' grass slope",
+        "text": "Before its name, Windy Hill was called 'Ttibatneul' (tti-bat-neul, meaning 'miscanthus slope') — a plain little grassy hill north of Dojangpo Village, long serving as the backdrop of a fishing village."
+      },
+      {
+        "time": "2002",
+        "tag": "Named",
+        "title": "'Windy Hill' is born",
+        "text": "Around 2002, this grassy hill — famed for its strong sea winds and low-lying vegetation — was officially named 'Baram-ui Eondeok' (Windy Hill) and gradually entered the world of film and variety shows as a filming location."
+      },
+      {
+        "time": "2009",
+        "tag": "Icon built",
+        "title": "Dutch windmill completed",
+        "text": "In 2009, an ~11 m Dutch-style windmill was erected on the hilltop with a ~450 m wooden deck, becoming Windy Hill's most recognisable visual core."
+      },
+      {
+        "time": "Present",
+        "tag": "Protection",
+        "title": "Within the Hallyeo Maritime National Park",
+        "text": "Windy Hill and the surrounding coast and islands belong to the Hallyeo Maritime National Park landscape system, continuously cared for and managed between ecological protection and tourism."
+      }
+    ],
+    "engineering": [
+      {
+        "title": "Why 'Windy Hill'? A landform shaped by wind",
+        "text": "Facing the Korea Strait, the hilltop catches year-round strong sea winds that keep the meadow low and rippling — hence the name. This open grass slope shaped by wind and sea is its most distinctive landscape language.",
+        "points": [
+          "Winds are far stronger than inland — the most直观 sensory feature.",
+          "Low grasses and wildflowers form a 'green carpet' in the wind."
+        ]
+      },
+      {
+        "title": "The 11 m Dutch windmill & 450 m deck",
+        "text": "The Dutch windmill brings a Mediterranean exotic image that contrasts with the peninsula seascape; the deck leads visitors from lawn to the best sea-view point, balancing protection and experience.",
+        "points": [
+          "The windmill is an outdoor landmark — close-up photos welcome.",
+          "The deck reduces trampling of the meadow — an eco-friendly design."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "history",
+        "title": "Origins: from 'Ttibatneul' to Windy Hill",
+        "content": "Windy Hill was formerly 'Ttibatneul' (miscanthus slope), a plain little grassy hill beside Dojangpo Village. Only around 2002 was this wind-swept slope officially named 'Baram-ui Eondeok' (Windy Hill), moving from fishing-village backdrop into public view."
+      },
+      {
+        "id": "rebuild",
+        "title": "2009: the windmill is built",
+        "content": "In 2009 an ~11 m Dutch-style windmill was erected on the hilltop with a ~450 m wooden deck. Its Mediterranean imagery against the peninsula seascape made it Geoje's most recognisable landmark."
+      },
+      {
+        "id": "war",
+        "title": "A filming location for dramas & shows",
+        "content": "With open sea views and an exotic feel, Windy Hill became a backdrop for many Korean dramas, variety shows and pre-wedding shoots, sparking southern Geoje's tourism and turning a small grassy hill into the island's visual symbol."
+      },
+      {
+        "id": "architecture",
+        "title": "Windmill & deck landscape design",
+        "content": "The Dutch windmill stands atop the grassy slope; the wooden deck (데크길) winds along the terrain, leading visitors from the parking lot to the best sea-view point — balancing 'great photos' with 'meadow protection'."
+      },
+      {
+        "id": "cultural",
+        "title": "Part of the Hallyeo Maritime National Park",
+        "content": "Windy Hill, Haegeumgang and Oedo belong to the Hallyeo Maritime National Park landscape system, protected at the ecological and scenic level, and an important node of Geoje's marine tourism."
+      },
+      {
+        "id": "symbol",
+        "title": "The visual centre of southern Geoje",
+        "content": "Looking up from the deck or back from Seonjadae and the Haegeumgang cruise, Windy Hill always occupies the visual centre of Geoje's south-line skyline. It is both a tourist symbol and a cultural link connecting Dojangpo's fishing memory, Haegeumgang's rock islets and Oedo's Mediterranean gardens."
+      }
+    ],
+    "didYouKnow": {
+      "title": "Did you know?",
+      "text": "Windy Hill was originally just an ordinary miscanthus slope called 'Ttibatneul' — no temple, no castle. What truly made it a landmark was the official naming in 2002 and the Dutch windmill completed in 2009 — a hill 'named after the wind', made famous by wind."
+    }
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "From the windmill front, deck sea views and Haegeumgang vistas to the four seasons — the visual beauty of Windy Hill.",
+    "photoAlt": "Windy Hill (바람의 언덕)",
+    "photoAlts": [
+      "Full view of the windmill",
+      "Detail of the Dutch windmill",
+      "Looking up at the windmill from the lawn",
+      "Deck framed with the sea",
+      "Distant view of the slope and windmill",
+      "Windmill and green slope under blue sky",
+      "Overlook toward Dojangpo",
+      "Structural detail on the windmill's south side",
+      "Close-up at a deck corner",
+      "The empty meadow at dawn",
+      "Windmill silhouette at dusk",
+      "Golden Windy Hill at sunset",
+      "Vista with Haegeumgang's rock islets",
+      "Windmill among spring greenery",
+      "Visitors posing by the windmill",
+      "Distant view toward Seonjadae",
+      "View from the coastal road",
+      "Full hill under a clear blue sky",
+      "Transition from meadow to sea",
+      "Southern coast in autumn colours",
+      "Quiet hill in sea fog",
+      "Windmill lights at night",
+      "Vast multi-island sea view",
+      "Windmill and deck — the closing frame"
+    ],
+    "viewAll": "View location on Google Maps",
+    "showMore": "Show more photos",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8"
+  },
+  "reviews": {
+    "title": "Visitor Reviews",
+    "declaration": "Visitor feedback can be viewed on Google Maps (external link).",
+    "featuredTitle": "Visitor Quotes",
+    "featuredSubtitle": "A few short lines that capture the spirit of Windy Hill.",
+    "moreReviews": "View on Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8",
+    "featured": [
+      {
+        "text": "I never expected such a healing sea-view windmill at a corner of Geoje — the sea breeze just melts the stress away.",
+        "source": "Independent traveller · Seoul"
+      },
+      {
+        "text": "At sunset the windmill with Haegeumgang's rock islets was the most romantic scene of the trip.",
+        "source": "Photographer · Busan"
+      },
+      {
+        "text": "A free, open, safe coastal hill — our kids loved running around and flying kites.",
+        "source": "Family · Daejeon"
+      }
+    ],
+    "items": [
+      {
+        "name": "Minjun",
+        "date": "April 2026",
+        "rating": 5,
+        "text": "A few minutes' walk from Dojangpo parking; the windmill is taller than I imagined. Few people in the morning and clean front-on shots — strongly recommend going early."
+      },
+      {
+        "name": "Suyeon",
+        "date": "March 2026",
+        "rating": 5,
+        "text": "At dusk the windmill turns golden and frames beautifully with Haegeumgang. Easy to combine with the cruise on one route."
+      },
+      {
+        "name": "Jaehyuk",
+        "date": "February 2026",
+        "rating": 4,
+        "text": "A valuable free coastal landmark; mind the wind. Crowded in the afternoon — weekdays are quieter."
+      },
+      {
+        "name": "Jiyun",
+        "date": "January 2026",
+        "rating": 5,
+        "text": "Restrooms and food nearby are convenient, easy even with kids. About a ten-minute walk from Dojangpo Pier."
+      }
+    ]
+  },
+  "mapSection": {
+    "title": "How to Get Here",
+    "subtitle": "14-47 Galgot-ri, Nambu-myeon, Geoje-si, Gyeongsangnam-do, Korea (Dojangpo Village)",
+    "openMaps": "Open in Google Maps",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8"
+  },
+  "footer": {
+    "siteName": "Windy Hill (바람의 언덕)",
+    "rights": "© 2026 Windy Hill (바람의 언덕) — an independent non-profit visitor-information project. All rights reserved.",
+    "legalLinksTitle": "Privacy & Terms",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Settings",
+    "officialResourcesTitle": "Official & Reference Resources",
+    "mapsLabel": "Google Maps →",
+    "mapsUrl": "https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8",
+    "officialLinksList": [
+      { "name": "Geoje Tourism & Culture (Smart Tour – Windy Hill)", "url": "https://tour.geoje.go.kr" },
+      { "name": "VisitKorea (Korea Tourism Organization) – Windy Hill", "url": "https://korean.visitkorea.or.kr" },
+      { "name": "Korea National Park Service (KNPS)", "url": "https://www.knps.or.kr" },
+      { "name": "Gyeongnam Tour Guide", "url": "https://tour.gyeongnam.go.kr" },
+      { "name": "Geoje City Hall", "url": "https://www.geoje.go.kr" }
+    ],
+    "mission": {
+      "title": "Our Mission",
+      "text": "So that every visitor to Geoje Island leaves without regret, we have gathered these scattered official details — only to give you the purest cultural and visiting experience."
+    },
+    "disclaimer": "This website is an independent non-profit visitor-information project. We are not affiliated with any government agency or official organisation."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": [
+      {
+        "heading": "1. Information Collection",
+        "content": "We generally do not actively collect personally identifiable information. Any information you provide via a contact form or email will be kept strictly confidential."
+      },
+      {
+        "heading": "2. Use of Information",
+        "content": "Information we collect is used solely to provide, maintain and improve our services and to communicate with you. We will not sell or share your personal information with third parties for marketing purposes."
+      },
+      {
+        "heading": "3. Cookies & Tracking",
+        "content": "We use cookies and similar tracking technologies to record activity on the site and store certain information. You can instruct your browser to refuse all cookies or to alert you when a cookie is sent."
+      },
+      {
+        "heading": "4. Data Security",
+        "content": "Your data security is important to us. We take commercially acceptable measures to protect your personal data, although no method of transmission over the internet is 100% secure."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: June 2026",
+    "sections": [
+      {
+        "heading": "1. Acceptance of Terms",
+        "content": "By accessing and using this website, you agree to be bound by these Terms of Service. If you do not agree with any part, you may not use the service."
+      },
+      {
+        "heading": "2. Use of Service",
+        "content": "This website is an independent non-profit visitor-information project. The information provided is for general informational purposes only. You agree to use the website responsibly and lawfully."
+      },
+      {
+        "heading": "3. Intellectual Property",
+        "content": "All content on this website, including text, images and logos, unless otherwise stated, is the property of the site owner. Unauthorised use, reproduction or distribution is strictly prohibited."
+      },
+      {
+        "heading": "4. Limitation of Liability",
+        "content": "We shall not be liable for any direct, indirect, incidental or consequential damages arising from the use of or inability to use this website or the information contained herein."
+      }
+    ]
+  },
+  "cookieSettings": {
+    "title": "Cookie Settings",
+    "description": "Manage your cookie preferences.",
+    "essential": {
+      "title": "Strictly Necessary Cookies",
+      "description": "Required for basic website functions.",
+      "badge": "Always active"
+    },
+    "analytics": {
+      "title": "Analytics Cookies",
+      "description": "Help us understand how visitors interact with the site."
+    },
+    "marketing": {
+      "title": "Marketing Cookies",
+      "description": "Used to track visitors across websites."
+    },
+    "save": "Save preferences",
+    "saved": "Preferences saved!"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Practical information about Windy Hill's facilities, history and visiting plan.",
+    "amenities": {
+      "title": "Nearby Facilities",
+      "items": [
+        { "icon": "🅿️", "label": "Parking", "value": "Dojangpo public parking (free)" },
+        { "icon": "🚻", "label": "Restrooms", "value": "Hill foot & Dojangpo Village public toilets" },
+        { "icon": "🔌", "label": "Fuel / Charging", "value": "Gohyeon (고현) city fuel & EV stations" },
+        { "icon": "♿", "label": "Accessibility", "value": "Gentle deck — wheelchair/stroller accessible" }
+      ]
+    },
+    "categories": [
+      {
+        "id": "infra",
+        "title": "Transport & Infrastructure",
+        "items": [
+          {
+            "q": "Is there parking? What are the rates?",
+            "a": "Windy Hill has no dedicated lot, but the Dojangpo public parking (도장포 공영주차장, address: 60 Dojangpo 1-gil, Nambu-myeon, Geoje-si, Gyeongsangnam-do) is free and a 3–5 minute walk to the deck entrance. It fills in peak season and weekend afternoons — arrive early or use public transit."
+          },
+          {
+            "q": "Are wheelchairs or strollers allowed in the area?",
+            "a": "Windy Hill is an open grassy hill; from Dojangpo parking the gentle 450 m deck leads to the windmill, accessible for wheelchairs and strollers. Some grass slopes and cliff edges are natural terrain — assist and keep away from edges."
+          },
+          {
+            "q": "Are there restrooms or food/supplies inside?",
+            "a": "Public toilets are at the hill foot and Dojangpo Village; the village has restaurants, cafés and convenience stores for easy supplies. There are no fixed shops on the hill — bring your own water."
+          }
+        ]
+      },
+      {
+        "id": "geo",
+        "title": "Curiosities & Geology",
+        "items": [
+          {
+            "q": "Why is it called 'Windy Hill'? What about the windmill?",
+            "a": "The hilltop faces the Korea Strait; year-round strong sea winds keep the meadow low and rippling, hence the name. Named in 2002, it gained an ~11 m Dutch windmill with a 450 m deck in 2009, now its signature sight."
+          },
+          {
+            "q": "What is its special natural or geological value?",
+            "a": "Windy Hill and Haegeumgang belong to the rias-coast system of the Hallyeo Maritime National Park, offering vast multi-island views and a unique wind-shaped meadow ecosystem — a great spot to observe coastal landforms, migratory birds and coastal protection."
+          }
+        ]
+      },
+      {
+        "id": "plan",
+        "title": "Planning & Tickets",
+        "items": [
+          {
+            "q": "Is a ticket required to visit?",
+            "a": "No. Windy Hill is an always-open, completely free natural viewpoint with no walls, gates or ticket office — visit any time."
+          },
+          {
+            "q": "How long does a visit take?",
+            "a": "A typical visit is about 40 minutes to 1.5 hours: walk the deck up, photograph the windmill, gaze at Haegeumgang; allow half a day to a full day if adding the Haegeumgang cruise or Oedo."
+          },
+          {
+            "q": "Can I still go in bad weather?",
+            "a": "Yes — Windy Hill is an open natural site, accessible in any weather. But the seaside is windy and grass can be slippery; on rainy or windy days wear non-slip shoes and dress for wind and cold. Sea fog or heavy rain sharply reduces visibility and cruises may be cancelled."
+          }
+        ]
+      },
+      {
+        "id": "nearby",
+        "title": "Nearby Area",
+        "items": [
+          {
+            "q": "After visiting, what other attractions are worth seeing nearby?",
+            "a": "From Windy Hill you can cruise to Haegeumgang (해금강), overlook the multi-island sea from Seonjadae (신선대) observatory, stroll the Mediterranean gardens of Oedo Botania (외도 보타니아), or step onto Hakdong Mongdol Beach; further afield, link Tongyeong, Namhae and Busan."
+          }
+        ]
+      }
+    ]
+  },
+  "recommendations": {
+    "title": "Explore More of Geoje",
+    "attractionsTitle": "Nearby Attractions",
+    "toursTitle": "Recommended Experiences",
+    "attractions": [
+      { "name": "Haegeumgang (해금강)", "url": "https://korean.visitkorea.or.kr" },
+      { "name": "Oedo Botania (외도 보타니아)", "url": "https://korean.visitkorea.or.kr" },
+      { "name": "Seonjadae (신선대) Observatory", "url": "https://tour.geoje.go.kr" },
+      { "name": "Dojangpo Village & Cruise Pier", "url": "https://tour.geoje.go.kr" },
+      { "name": "Hakdong Mongdol Beach (학동 몽돌해변)", "url": "https://tour.geoje.go.kr" }
+    ],
+    "tours": [
+      { "name": "Geoje Tourism & Culture (Geoje Tourism)", "url": "https://tour.geoje.go.kr" },
+      { "name": "VisitKorea (Korea Tourism Organization)", "url": "https://korean.visitkorea.or.kr" },
+      { "name": "Gyeongnam Tour Guide", "url": "https://tour.gyeongnam.go.kr" }
+    ]
+  },
+  "scienceArt": {
+    "title": "Nature & Culture: The Ecology and Origins of Windy Hill",
+    "subtitle": "Windy Hill is more than a sea-view lawn — it is a public landscape written by sea wind, coastal landforms and local culture. Two dimensions help you read it.",
+    "scienceMuseum": {
+      "name": "Coastal Ecology",
+      "role": "Wind-shaped meadow & multi-island sea",
+      "highlight": "Facing the Korea Strait and Haegeumgang, Windy Hill belongs to the rias coast of the Hallyeo Maritime National Park. Year-round strong sea winds keep the meadow low like a carpet and bring vast multi-island views and rich migratory-bird habitat.",
+      "points": [
+        "Sea wind: the most直观 feature, and the origin of the name 'Windy Hill'.",
+        "Multi-island sea: Haegeumgang's rock islets in full view.",
+        "Meadow ecology: low vegetation is a unique wind-shaped landscape."
+      ],
+      "ctaLabel": "View Korea National Park Service ↗",
+      "ctaUrl": "https://www.knps.or.kr"
+    },
+    "artMuseum": {
+      "name": "Cultural Symbol",
+      "role": "From grass slope to landmark",
+      "highlight": "Formerly 'Ttibatneul', a small hill by a fishing village; after its 2002 naming and the 2009 Dutch windmill, its Mediterranean exotic image made it a filming spot for Korean dramas and variety shows, symbolising Geoje's shift from fishing village to marine tourism.",
+      "points": [
+        "2002: officially named 'Windy Hill'.",
+        "2009: the 11 m Dutch windmill completed.",
+        "Filming location: boosted southern Geoje tourism."
+      ],
+      "ctaLabel": "View Geoje Tourism & Culture ↗",
+      "ctaUrl": "https://tour.geoje.go.kr"
+    }
+  },
+  "outdoorMuseum": {
+    "title": "Photo & Spotting Guide: Best Frames of Windy Hill",
+    "subtitle": "As Geoje's most recognisable coastal landmark, a few structured viewpoints and timings will greatly improve the usefulness and beauty of your photos.",
+    "items": [
+      {
+        "id": "windmill",
+        "icon": "🌬️",
+        "name": "Classic Front View",
+        "location": "Lawn in front of the windmill",
+        "background": "Levelling the windmill from the lawn in front is the safest angle to recreate the 'Geoje symbol'. With blue sky or sea as backdrop you get a clean, symmetric full shot.",
+        "points": [
+          "Place the windmill at the centre, using the open lawn as negative space.",
+          "Crouch low and shoot upward to lengthen the windmill and emphasise its stature."
+        ],
+        "badge": { "value": "All day", "label": "Most versatile" }
+      },
+      {
+        "id": "deck",
+        "icon": "🌊",
+        "name": "Deck with the Sea",
+        "location": "450 m deck corner",
+        "background": "Walking the deck, you can capture the windmill, slope and Haegeumgang's multi-island sea together — sea, sky and green slope make a rich island flavour.",
+        "points": [
+          "Use the windmill as the distant subject, with the deck and sea leading the eye.",
+          "A telephoto compression brings the windmill and seascape 'closer'."
+        ],
+        "badge": { "value": "Daytime", "label": "Best flavour" }
+      },
+      {
+        "id": "sunset",
+        "icon": "🌇",
+        "name": "Dusk & Sunset",
+        "location": "Slope facing the strait",
+        "background": "Just before sunset the windmill and sea turn golden — the most atmospheric window; on clear days the blue hour balances sky and sea best.",
+        "points": [
+          "Shoot in the blue hour (20–30 min around sunset) for the best balance.",
+          "A tripod captures long-exposure flowing clouds over the sea."
+        ],
+        "badge": { "value": "Dusk", "label": "Most atmospheric" }
+      },
+      {
+        "id": "overlook",
+        "icon": "⛰️",
+        "name": "Overlook from Seonjadae",
+        "location": "Seonjadae / Haegeumgang cruise",
+        "background": "From the Seonjadae lookout or the Haegeumgang cruise, Windy Hill fits into a broader panorama — great for a closing wide shot.",
+        "points": [
+          "Use distant hills and sea as a base to highlight the windmill's silhouette.",
+          "Morning mist gives the best layers; a small aperture captures the full panorama."
+        ],
+        "badge": { "value": "Morning", "label": "Best layers" }
+      }
+    ]
+  },
+  "education": {
+    "title": "Why is there a 'Windy Hill' on Geoje? (Cultural Meaning)",
+    "subtitle": "A small seaside hill — why did it become Geoje's visual symbol? Behind it lie multiple narratives of ocean, wind and local life.",
+    "points": [
+      {
+        "title": "Origins of wind & meadow",
+        "text": "Windy Hill was formerly 'Ttibatneul', a small grassy hill beside Dojangpo Village. Year-round strong sea winds kept the meadow low, forming a unique open landscape — and hence its name."
+      },
+      {
+        "title": "From fishing village to tourist landmark",
+        "text": "Named in 2002 and windmilled in 2009, Windy Hill entered film and variety with a Mediterranean image, becoming the starting point and symbol of southern Geoje's tourism."
+      },
+      {
+        "title": "A cultural link across sea and hills",
+        "text": "The same windmill connects Dojangpo's fishing memory, Haegeumgang's rock islets and Oedo's Mediterranean gardens — reminding us that great coastal landmarks are often the result of nature and culture living together."
+      }
+    ]
+  },
+  "audience": {
+    "title": "Who Will Resonate Here? (Audience Guide)",
+    "subtitle": "Every kind of visitor can find their best 'way in'.",
+    "items": [
+      {
+        "icon": "👨‍👩‍👧",
+        "group": "Families",
+        "resonance": "A free, open, safe coastal hill where kids can run, fly kites and meet this Dutch windmill and the sea up close.",
+        "tip": "Pair with Dojangpo Village restaurants and cafés — see the sea first, then climb, for an easier pace."
+      },
+      {
+        "icon": "📷",
+        "group": "Photographers & Couples",
+        "resonance": "The windmill and sea at clear mornings and sunset are among Geoje's most romantic scenes, with a very high hit rate.",
+        "tip": "Occupy the lawn before dawn; capture both windmill and golden sea in the blue hour."
+      },
+      {
+        "icon": "🌿",
+        "group": "Nature & Ecology Lovers",
+        "resonance": "Windy Hill and Haegeumgang belong to the Hallyeo Maritime National Park — a great spot to observe rias coasts, meadow ecology and migratory birds.",
+        "tip": "String Windy Hill, the Haegeumgang cruise and Oedo into a 'Geoje south-line nature pilgrimage'."
+      },
+      {
+        "icon": "🗺️",
+        "group": "First-time Korea Island Visitors",
+        "resonance": "Without going all the way to Jeju, you meet a Dutch windmill and multi-island sea on Geoje — and it is close to Busan, the best starting point for Korea's island tourism.",
+        "tip": "Drive south from Busan via the Geoje Bridge/Tunnel; Windy Hill will meet you on the south line."
+      }
+    ]
+  }
+}

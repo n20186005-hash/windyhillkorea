@@ -1,0 +1,121 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import NoticeBanner from '../components/NoticeBanner.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, buildAlternates, htmlLangAttr, getI18n } from '../i18n/ui';
+import { ogLocale } from '../config';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+}
+
+const { title, description, path = '' } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const htmlLang = htmlLangAttr(lang);
+const alts = buildAlternates(path);
+const canonical = alts[lang] ?? alts.zh;
+const { messages } = getI18n(Astro.url);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: messages.meta.title,
+  description: messages.meta.description,
+  url: canonical,
+  image: 'https://windyhillkorea.com/gallery/windy-hill-1.jpg',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Galgot-ri 14-47, Nambu-myeon',
+    addressLocality: 'Geoje-si',
+    addressRegion: 'Gyeongsangnam-do',
+    postalCode: '53261',
+    addressCountry: 'KR',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 34.7445,
+    longitude: 128.7400,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59',
+    },
+  ],
+  isAccessibleForFree: true,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.2',
+    reviewCount: '11454',
+  },
+  sameAs: ['https://maps.app.goo.gl/Vh7pZjbLwYiGonFd8'],
+};
+  const breadcrumbLd = (() => {
+    const bc = messages.breadcrumb;
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: bc.home, item: `https://windyhillkorea.com/${lang}` },
+        { '@type': 'ListItem', position: 2, name: bc.geoje, item: `https://windyhillkorea.com/${lang}#overview` },
+        { '@type': 'ListItem', position: 3, name: bc.nambu, item: `https://windyhillkorea.com/${lang}#transport` },
+        { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
+      ],
+    };
+  })();
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="zh" href={alts.zh} />
+    <link rel="alternate" hreflang="en" href={alts.en} />
+    <link rel="alternate" hreflang="ja" href={alts.ja} />
+    <link rel="alternate" hreflang="ko" href={alts.ko} />
+    <link rel="alternate" hreflang="x-default" href={alts.xDefault} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={ogLocale[lang] ?? lang} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXX" />
+    <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)}></script>
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbLd)}></script>
+
+    <script is:inline>
+      (function () {
+        try {
+          var theme = localStorage.getItem('theme');
+          if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen">
+    <Header />
+    <NoticeBanner />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
