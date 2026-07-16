@@ -215,7 +215,7 @@ const field = {
         <div class="grid sm:grid-cols-3 gap-3">
           <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
             <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.coordLabel}</p>
-            <p class="text-base font-semibold" style="color: var(--text-primary);">34.7931° N, 128.6381° E</p>
+            <p class="text-base font-semibold" style="color: var(--text-primary);">34.7447° N, 128.6631° E</p>
           </div>
           <div class="rounded-2xl p-4 border" style="background: var(--bg-tertiary); border-color: var(--border-color);">
             <p class="text-xs uppercase tracking-[0.14em] mb-2" style="color: var(--text-muted);">{field.goldenLabel}</p>
@@ -424,8 +424,8 @@ const field = {
     if (marineNoteEl) marineNoteEl.textContent = section.getAttribute('data-marine-loading') || '';
 
     Promise.all([
-      fetch('https://api.open-meteo.com/v1/forecast?latitude=34.7931&longitude=128.6381&daily=sunset&current=wind_speed_10m&timezone=Asia/Seoul', { cache: 'no-store' }),
-      fetch('https://marine-api.open-meteo.com/v1/marine?latitude=34.7931&longitude=128.6381&current=wave_height&timezone=Asia/Seoul', { cache: 'no-store' }),
+      fetch('https://api.open-meteo.com/v1/forecast?latitude=34.7447&longitude=128.6631&daily=sunset&current=wind_speed_10m&timezone=Asia/Seoul', { cache: 'no-store' }),
+      fetch('https://marine-api.open-meteo.com/v1/marine?latitude=34.7447&longitude=128.6631&current=wave_height&timezone=Asia/Seoul', { cache: 'no-store' }),
     ])
       .then(function (responses) {
         return Promise.all(responses.map(function (res) {
