@@ -1,16 +1,17 @@
 ---
-const target = '/zh';
+// 根路径兜底跳转页；Cloudflare 边缘 302 已在 public/_redirects 中处理（/ -> /ko/）。
+const meta = { title: '한국어로 이동 중…', description: 'Redirecting to Windy Hill Geoje 한국어 가이드…' };
 ---
-
 <!doctype html>
-<html lang="zh-CN">
+<html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0; url=${target}`} />
-    <link rel="canonical" href="https://windyhillkorea.com/zh" />
-    <title>风之丘（바람의 언덕）· Windy Hill, Geoje</title>
+    <meta http-equiv="refresh" content="0; url=/ko" />
+    <link rel="canonical" href="https://windyhillkorea.com/ko/" />
+    <title>한국어로 이동 중…</title>
+    <meta name="robots" content="noindex" />
   </head>
   <body>
-    <p>正在跳转到 <a href={target}>中文</a>…</p>
+    <p style="font-family: sans-serif; padding: 2rem;">한국어로 이동 중… 자동으로 이동하지 않으면 <a href="/ko">여기</a>를 클릭하세요.</p>
   </body>
 </html>

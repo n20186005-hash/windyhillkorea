@@ -6,7 +6,7 @@ export default defineConfig({
   site: 'https://windyhillkorea.com',
   output: 'static',
   i18n: {
-    defaultLocale: 'zh',
+    defaultLocale: 'ko',
     locales: ['zh', 'en', 'ja', 'ko'],
     routing: {
       prefixDefaultLocale: true,
