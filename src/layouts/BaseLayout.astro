@@ -91,9 +91,9 @@ const breadcrumbLd = (() => {
   return {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: bc.home, item: `https://windyhillkorea.com/${lang}` },
-      { '@type': 'ListItem', position: 2, name: bc.geoje, item: `https://windyhillkorea.com/${lang}#overview` },
-      { '@type': 'ListItem', position: 3, name: bc.nambu, item: `https://windyhillkorea.com/${lang}#transport` },
+      { '@type': 'ListItem', position: 1, name: bc.home, item: canonical },
+      { '@type': 'ListItem', position: 2, name: bc.geoje, item: `${canonical}#overview` },
+      { '@type': 'ListItem', position: 3, name: bc.nambu, item: `${canonical}#transport` },
       { '@type': 'ListItem', position: 4, name: bc.current, item: canonical },
     ],
   };

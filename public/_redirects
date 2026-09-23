@@ -1,1 +1,7 @@
+# Canonicalize trailing-slash variants (both /ko and /ko/ were indexed in Search Console)
+/ko  /ko/  301
+/en  /en/  301
+/zh  /zh/  301
+/ja  /ja/  301
+# Root -> default locale (Korean)
 /  /ko/  302
